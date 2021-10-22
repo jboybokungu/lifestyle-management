@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
+import './index.css';
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <p>Simple App to View Users.</p>
+        <h6>Simple App to View Users.</h6>
         <Navbar />
       </div>
     </header>
