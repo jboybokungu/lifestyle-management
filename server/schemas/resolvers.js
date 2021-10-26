@@ -40,6 +40,10 @@ const resolvers = {
         }
       );
     },
+    
+    removeGoal: async (parent, { goalId} ) => {
+      return Goal.findOneAndDelete({_id: goalId });
+    },
     addUser: async (_, args) => {
       const user = await User.create(args);
       const token = signToken(user);
