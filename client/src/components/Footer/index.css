@@ -1,11 +1,11 @@
 .footer {
-    background-color: #B9AC92;
-    border-top:2px solid #FBE6D4;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    color: white;
-    font-size: 15px;
-
-   }
-   
+  background-color: #b9ac92;
+  border-top: 2px solid #fbe6d4;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+}

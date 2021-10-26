@@ -1,20 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../Navbar';
-import './index.css';
+import React from "react";
+import { Link } from "react-router-dom";
 
+import "./index.css";
 
 const Header = () => {
   return (
     <header>
-      <div>
+      <div id="headercolor">
         <Link to="/">
-          <h1>User List</h1>
+          <h1>Personal Dashboard</h1>
         </Link>
-      </div>
-      <div>
-        <h6>Simple App to View Users.</h6>
-        <Navbar />
       </div>
     </header>
   );
