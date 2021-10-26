@@ -46,7 +46,7 @@ If logged out show login controls
           aria-controls="sidebarMenu"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+        ></button>
         </Container>
 
 
