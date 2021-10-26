@@ -20,10 +20,26 @@ const resolvers = {
     },
     goals: async (_, args) => {
       return Goal.findOne({_id: goalId});
-    }
+    },
   },
 
   Mutation: {
+    addGoal: async (parent, { goalText, goalAuthor}) => {
+      return Goal.create({ goalText, goalAuthor});
+    },
+
+    updateGoal: async (parent, { goalId, goalText}) => {
+      return Goal.findOneAndUpdate (
+        {_id: goalId},
+        {
+          $addToSet : { goals: {goalText} },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
     addUser: async (_, args) => {
       const user = await User.create(args);
       const token = signToken(user);
