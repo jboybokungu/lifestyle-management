@@ -15,6 +15,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    goals: async () => {
+      return Goal.find().sort({ createdAt: -1});
+    },
+    goals: async (_, args) => {
+      return Goal.findOne({_id: goalId});
+    }
   },
 
   Mutation: {

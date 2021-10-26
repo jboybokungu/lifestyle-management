@@ -46,23 +46,23 @@ const client = new ApolloClient({
 
 function App() {
 
-  let [loggedIn, setLoggedIn] = useState(false);
-  useEffect(() => {
-    async function getData() {
-      const result = await fetch('/auth/isLoggedIn', { method: 'GET'});
-      const getResult = await result.json();
-      setLoggedIn(getResult.isLoggedIn);
-    }
-    getData();
-  });
+  // let [loggedIn, setLoggedIn] = useState(false);
+  // useEffect(() => {
+  //   async function getData() {
+  //     const result = await fetch('/auth/isLoggedIn', { method: 'GET'});
+  //     const getResult = await result.json();
+  //     setLoggedIn(getResult.isLoggedIn);
+  //   }
+  //   getData();
+  // });
 
-  const logout = () => {
-    setLoggedIn(false);
-  };
+  // const logout = () => {
+  //   setLoggedIn(false);
+  // };
 
-  const login = () => {
-    setLoggedIn(true);
-  };
+  // const login = () => {
+  //   setLoggedIn(true);
+  // };
   
   return (
     <ApolloProvider client={client}>
