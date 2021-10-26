@@ -3,5 +3,25 @@
     "username": "testuser",
     "email": "test@user.com",
     "password": "password1234"
+  },
+  {
+    "username": "fitgirl",
+    "email": "fitgirl@user.com",
+    "password": "password1234"
+  },
+  {
+    "username": "mrworkout",
+    "email": "mrworkoutt@user.com",
+    "password": "password1234"
+  },
+  {
+    "username": "gurugirl",
+    "email": "gurugirl@user.com",
+    "password": "password1234"
+  },
+  {
+    "username": "justdoit",
+    "email": "justdoit@user.com",
+    "password": "password1234"
   }
 ]
