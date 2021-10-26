@@ -21,9 +21,9 @@ function Navbar() {
       </>
     );
   }
-  // If logged out show login controls
+If logged out show login controls
   return (
-    // <>
+    <>
     <Container>
        <Dropdown>
   <Dropdown.Toggle variant="warning" id="dropdown-basic">
@@ -39,14 +39,14 @@ function Navbar() {
 </Dropdown>
         </Container>
 
-      <Link to="/login">
-        Login
-      </Link>
-      <Link to="/signup">
-        Signup
-      </Link>
+
+<Link className="col-md-3 col-lg-2 me-0 px-3" to="/login">
+        Log-In
+<Link className="col-md-3 col-lg-2 me-0 px-3" to="/signup">
+        JOIN HERE
+        Log-In
     </> 
   )
-}
+};
 
-export default Navbar
+export default Navbar;
