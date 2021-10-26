@@ -37,6 +37,16 @@ If logged out show login controls
     <Dropdown.Item href="#/signout">Log-Out</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
+
+<button
+          navbarToggle="navbar-toggler position-absolute d-md-none collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
         </Container>
 
 
