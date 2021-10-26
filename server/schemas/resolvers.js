@@ -16,9 +16,35 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    goals: async () => {
+      return Goal.find().sort({ createdAt: -1});
+    },
+    goals: async (_, args) => {
+      return Goal.findOne({_id: goalId});
+    },
   },
 
   Mutation: {
+    addGoal: async (parent, { goalText, goalAuthor}) => {
+      return Goal.create({ goalText, goalAuthor});
+    },
+
+    updateGoal: async (parent, { goalId, goalText}) => {
+      return Goal.findOneAndUpdate (
+        {_id: goalId},
+        {
+          $addToSet : { goals: {goalText} },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    
+    removeGoal: async (parent, { goalId} ) => {
+      return Goal.findOneAndDelete({_id: goalId });
+    },
     addUser: async (_, args) => {
       const user = await User.create(args);
       const token = signToken(user);
