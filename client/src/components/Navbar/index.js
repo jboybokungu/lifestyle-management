@@ -21,9 +21,9 @@ function Navbar() {
       </>
     );
   }
-  // If logged out show login controls
+If logged out show login controls
   return (
-    // <>
+    <>
     <Container>
        <Dropdown>
   <Dropdown.Toggle variant="warning" id="dropdown-basic">
@@ -37,16 +37,26 @@ function Navbar() {
     <Dropdown.Item href="#/signout">Log-Out</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
+
+<button
+          navbarToggle="navbar-toggler position-absolute d-md-none collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
         </Container>
 
-      <Link to="/login">
-        Login
-      </Link>
-      <Link to="/signup">
-        Signup
-      </Link>
+
+<Link className="col-md-3 col-lg-2 me-0 px-3" to="/login">
+        Log-In
+<Link className="col-md-3 col-lg-2 me-0 px-3" to="/signup">
+        JOIN HERE
+        Log-In
     </> 
   )
-}
+};
 
-export default Navbar
+export default Navbar;
