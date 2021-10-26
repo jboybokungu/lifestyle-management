@@ -51,7 +51,7 @@ const Login = () => {
     return (
       <form onSubmit={handleFormSubmit}>
         <input
-          placeholder="Your email"
+          placeholder="Email"
           name="email"
           type="email"
           value={formState.email}
