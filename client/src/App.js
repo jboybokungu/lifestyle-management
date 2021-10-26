@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -14,7 +14,10 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// import Navbar from './components/Navbar';
+
+import { useState } from 'react';
+
+
 import './index.css';
 
 // Construct our main GraphQL API endpoint
@@ -41,7 +44,28 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
+
+  // let [loggedIn, setLoggedIn] = useState(false);
+  // useEffect(() => {
+  //   async function getData() {
+  //     const result = await fetch('/auth/isLoggedIn', { method: 'GET'});
+  //     const getResult = await result.json();
+  //     setLoggedIn(getResult.isLoggedIn);
+  //   }
+  //   getData();
+  // });
+
+  // const logout = () => {
+  //   setLoggedIn(false);
+  // };
+
+  // const login = () => {
+  //   setLoggedIn(true);
+  // };
+  
   return (
     <ApolloProvider client={client}>
       <Router>
