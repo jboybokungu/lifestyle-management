@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
+
+// import{ Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -86,5 +86,8 @@ const Signup = () => {
     </main>
   );
 };
+
+
+
 
 export default Signup;
