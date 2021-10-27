@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -14,7 +13,6 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Goals from './components/Goals';
 
 
 import './index.css';
@@ -43,7 +41,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
+  
   return (
     <ApolloProvider client={client}>
       <Router>
