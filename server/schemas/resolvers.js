@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User } = require('../models');
+const { User, Goal} = require('../models');
+
 
 const resolvers = {
   Query: {
@@ -19,7 +20,9 @@ const resolvers = {
     goals: async () => {
       return Goal.find().sort({ createdAt: -1});
     },
-    goals: async (_, args) => {
+
+    goal: async (_, args) => {
+
       return Goal.findOne({_id: goalId});
     },
   },
