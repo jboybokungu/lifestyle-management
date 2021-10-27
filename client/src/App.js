@@ -57,9 +57,7 @@ function App() {
       <Router>
         <div>
           <Header>
-            <Route exact path="/navbar">
               <Navbar />
-            </Route>
           </Header>
           <div>
             <Route exact path="/">
