@@ -7,6 +7,10 @@ const typeDefs = gql`
     email: String
     password: String
   }
+  type Goal {
+    _id: ID
+    exercise: String
+  }
 
   type Auth {
     token: ID!
@@ -17,11 +21,16 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     me: User
+    goals: [Goal]
+    goal(id: ID!): Goal
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
+    addGoal(exercise:String): Goal
+    updateGoal(exercise:String): Goal
+    removeGoal(exercise:String): Goal
   }
 `;
 

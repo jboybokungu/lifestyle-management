@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -15,6 +15,12 @@ import Profile from './pages/Profile';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
+
+
+import { useState } from 'react';
+
+
+import './index.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,7 +46,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
+  
   return (
     <ApolloProvider client={client}>
       <Router>

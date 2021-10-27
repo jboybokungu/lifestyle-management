@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User } = require('../models');
-// I added this
+const { User, Goal} = require('../models');
+
 
 const resolvers = {
   Query: {
@@ -17,9 +17,37 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    goals: async () => {
+      return Goal.find().sort({ createdAt: -1});
+    },
+
+    goal: async (_, args) => {
+
+      return Goal.findOne({_id: goalId});
+    },
   },
 
   Mutation: {
+    addGoal: async (parent, { goalText, goalAuthor}) => {
+      return Goal.create({ goalText, goalAuthor});
+    },
+
+    updateGoal: async (parent, { goalId, goalText}) => {
+      return Goal.findOneAndUpdate (
+        {_id: goalId},
+        {
+          $addToSet : { goals: {goalText} },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    
+    removeGoal: async (parent, { goalId} ) => {
+      return Goal.findOneAndDelete({_id: goalId });
+    },
     addUser: async (_, args) => {
       const user = await User.create(args);
       const token = signToken(user);
