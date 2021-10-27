@@ -47,6 +47,8 @@ const Navbar = () => {
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
           <Link className="dropdown-item" to="/">Profile</Link>
           <Link className="dropdown-item" to="/">Goals</Link>
+          <Link className="dropdown-item" to="/Signup">Logout</Link>
+
           {/* <div className="dropdown-divider"></div>
           <a className="dropdown-item" href="#">Something else here</a> */}
         </div>
