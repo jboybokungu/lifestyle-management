@@ -8,11 +8,6 @@ const typeDefs = gql`
     email: String
     password: String
   }
-
-  type Users {
-    _id: ID
-    name:String
-  }
   type Fitness {
     _id: ID
     currentWeight: Int
@@ -25,8 +20,8 @@ const typeDefs = gql`
     name: String
     calories: Int
     ounces: Int
-    
   }
+  
   type Sleep {
     _id: ID
     hours: Int
