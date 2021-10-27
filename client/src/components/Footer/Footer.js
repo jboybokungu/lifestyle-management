@@ -1,29 +1,36 @@
-
-/*eslint-disable*/
 import React from "react";
-import "./index.css";
+import "./Footer.css";
 import { Container, Nav, NavItem, NavLink } from "reactstrap";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <Nav >
-          <NavItem >
-            <NavLink href="">About Us</NavLink>
+        <Nav className="d-flex justify-content-center">
+          <NavItem>
+            <NavLink href="" className="text-reset">
+              About Us
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="">Contact</NavLink>
-          </NavItem>
-          
-          <NavItem>
-            <NavLink href="">Privacy</NavLink>
+            <NavLink href="" className="text-reset">
+              Contact
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="">Policy</NavLink>
+            <NavLink href="" className="text-reset">
+              Privacy
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="">Terms & Conditions</NavLink>
+            <NavLink href="" className="text-reset">
+              Policy
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="" className="text-reset">
+              Terms & Conditions
+            </NavLink>
           </NavItem>
         </Nav>
         <div className="copyright">

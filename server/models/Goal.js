@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const goalsSchema = new Schema({
+const goalSchema = new Schema({
     // start: {
     //     type: Date,
     //     default: Date.prototype.setDate,
@@ -18,6 +18,6 @@ const goalsSchema = new Schema({
  
 });
 
-const Goals = model('Goals', goalsSchema);
+const Goal = model('Goal', goalSchema);
 
-module.exports = Goals;
+module.exports = Goal;

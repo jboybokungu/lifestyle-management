@@ -2,6 +2,12 @@ body {
     font-size: 0.875rem;
   }
 
+  .nav-bg {
+    background-color: #FECB89
+    
+  }
+
+
   .sidebar {
     position: fixed;
     top: 0;
