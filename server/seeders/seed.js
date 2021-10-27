@@ -11,40 +11,17 @@ db.once('open', async () => {
   try {
     await User.deleteMany({});
     await User.create(userSeeds);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  process.exit(0);
-});
-db.once('open', async () => {
-  try {
     await Fitness.deleteMany({});
     await Fitness.create(fitness);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  process.exit(0);
-});
-db.once('open', async () => {
-  try {
     await Food.deleteMany({});
     await Food.create(food);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  process.exit(0);
-});
-db.once('open', async () => {
-  try {
     await Sleep.deleteMany({});
     await Sleep.create(sleep);
+    console.log('CONFIRMED SEED!');
+    process.exit(0);
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
-  process.exit(0);
 });
 
