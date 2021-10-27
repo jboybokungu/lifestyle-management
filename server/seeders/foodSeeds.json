@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Chicken",
+        "calories": "200",
+        "ounces": "8"
+    },
+    {
+        "name": "Ribeye Steak",
+        "calories": "300",
+        "ounces": "6"
+    }
+]

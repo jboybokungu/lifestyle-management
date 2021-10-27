@@ -1,5 +1,6 @@
 const { gql } = require('apollo-server-express');
-
+// change users back to profile
+// added name to goal
 const typeDefs = gql`
   type User {
     _id: ID
@@ -7,15 +8,10 @@ const typeDefs = gql`
     email: String
     password: String
   }
-  type Profile {
+
+  type Users {
     _id: ID
-    name:(userId: ID!)
-  }
-  type Goal {
-    _id: ID
-    fitness: [Fitness]
-    food: [Food]
-    sleep: [Sleep]
+    name:String
   }
   type Fitness {
     _id: ID
@@ -26,8 +22,9 @@ const typeDefs = gql`
   }
   type Food {
     _id: ID
+    name: String
     calories: Int
-    ounses: Int
+    ounces: Int
     
   }
   type Sleep {
@@ -44,16 +41,18 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     me: User
-    goals: [Goal]
-    goal(id: ID!): Goal
+    allFitnessGoals: Fitness
+    fitnessGoal(fitnessId: ID!): Fitness
+    allFoodGoals: Food
+    foodGoal(foodId: ID!): Food
+    allSleepGoals: Sleep
+    sleepGoal(sleepId: ID!): Food
+
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addGoal(exercise:String): Goal
-    updateGoal(exercise:String): Goal
-    removeGoal(exercise:String): Goal
   }
 `;
 

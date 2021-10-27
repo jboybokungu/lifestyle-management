@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import "./index.css";
-import Auth from '../../utils/auth';
+//import Auth from '../../utils/auth';
 // import Button from 'react-bootstrap/Button';
 // import BootstrapNavbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -62,5 +62,3 @@ const Navbar = () => {
     </>
   );
 };
-
-export default Navbar;
