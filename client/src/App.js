@@ -14,6 +14,8 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/index';
+
 
 
 
@@ -49,12 +51,16 @@ const client = new ApolloClient({
 
 
 function App() {
-  
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header> </Header>
+          <Header>
+            <Route exact path="/navbar">
+              <Navbar />
+            </Route>
+          </Header>
           <div>
             <Route exact path="/">
               <Home />

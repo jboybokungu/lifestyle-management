@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User, Goal} = require('../models');
+const { User, Goal, Fitness, Food, Sleep, Profile} = require('../models');
 
 
 const resolvers = {
@@ -25,6 +25,42 @@ const resolvers = {
 
       return Goal.findOne({_id: goalId});
     },
+
+    allFitnessGoals: async (_, args) => {
+      return Fitness.find().sort({ createdAt: -1});
+    },
+
+    fitnessGoal: async (_, args) => {
+
+      return Fitness.findOne({_id: fitnessId});
+    },
+
+    allFoodGoals: async (_, args) => {
+      return Food.find().sort({ createdAt: -1});
+    },
+
+    foodGoal: async (_, args) => {
+
+      return Food.findOne({_id: foodId});
+    },
+
+    allSleepGoals: async (_, args) => {
+      return Sleep.find().sort({ createdAt: -1});
+    },
+
+    foodGoal: async (_, args) => {
+
+      return Sleep.findOne({_id: sleepId});
+    },
+    allProfiles: async (_, args) => {
+      return Profile.find().sort({ createdAt: -1});
+    },
+
+    foodGoal: async (_, args) => {
+
+      return Profile.findOne({_id: sleepId});
+    },
+
   },
 
   Mutation: {

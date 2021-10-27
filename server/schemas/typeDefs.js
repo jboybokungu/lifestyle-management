@@ -7,9 +7,32 @@ const typeDefs = gql`
     email: String
     password: String
   }
+  type Profile {
+    _id: ID
+    name:(userId: ID!)
+  }
   type Goal {
     _id: ID
+    fitness: [Fitness]
+    food: [Food]
+    sleep: [Sleep]
+  }
+  type Fitness {
+    _id: ID
+    currentWeight: Int
+    goalWeight: Int
     exercise: String
+    duration: Int
+  }
+  type Food {
+    _id: ID
+    calories: Int
+    ounses: Int
+    
+  }
+  type Sleep {
+    _id: ID
+    hours: Int
   }
 
   type Auth {

@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./index.css";
 import Auth from '../../utils/auth';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
@@ -63,7 +64,7 @@ function Navbar() {
       </Link>
 </>
       )
-      
+
 };
 
       export default Navbar;
