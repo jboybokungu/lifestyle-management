@@ -7,13 +7,14 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
 
 
 import { useState } from 'react';
@@ -53,7 +54,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Header> </Header>
           <div>
             <Route exact path="/">
               <Home />
@@ -70,8 +71,11 @@ function App() {
             <Route exact path="/users/:id">
               <Profile />
             </Route>
+            <Route exact path="/Dashboard">
+              <Dashboard />
+            </Route>
           </div>
-          <Footer />
+          <Footer></Footer>
         </div>
       </Router>
     </ApolloProvider>
