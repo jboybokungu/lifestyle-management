@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import "./index.css";
 import Auth from '../../utils/auth';
 // import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar';
+import BootstrapNavbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Navbar() {
+const Navbar = () =>  {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -24,44 +24,42 @@ function Navbar() {
       </>
     );
   }
+//If logged out show login controls
 
   return (
     <>
-      <Container>
-        <Dropdown>
-          <Dropdown.Toggle variant="warning" id="dropdown-basic">
-            HOME
-          </Dropdown.Toggle>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">L.Y.B.L</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/dashboard">DashBoard</Dropdown.Item>
-            <Dropdown.Item href="#/profile">Profile action</Dropdown.Item>
-            <Dropdown.Item href="#/completed-goals">Goals</Dropdown.Item>
-            <Dropdown.Item href="#/signout">Log-Out</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <button
-          navbarToggle="navbar-toggler position-absolute d-md-none collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        ></button>
-
-      </Container>
-
-
-
-      <Link className="col-md-3 col-lg-2 me-0 px-3" to="/login">
-        Log-In
-      </Link>
-      <Link className="col-md-3 col-lg-2 me-0 px-3" to="/signup">
-        JOIN HERE
-        Log-In
-      </Link>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Log-Out</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Goals</a>
+          {/* <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> */}
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> 
 </>
       )
 
