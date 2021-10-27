@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,13 +7,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+
 
 import { useState } from 'react';
 
@@ -47,30 +49,12 @@ const client = new ApolloClient({
 
 
 function App() {
-
-  // let [loggedIn, setLoggedIn] = useState(false);
-  // useEffect(() => {
-  //   async function getData() {
-  //     const result = await fetch('/auth/isLoggedIn', { method: 'GET'});
-  //     const getResult = await result.json();
-  //     setLoggedIn(getResult.isLoggedIn);
-  //   }
-  //   getData();
-  // });
-
-  // const logout = () => {
-  //   setLoggedIn(false);
-  // };
-
-  // const login = () => {
-  //   setLoggedIn(true);
-  // };
   
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Header> </Header>
           <div>
             <Route exact path="/">
               <Home />
@@ -87,8 +71,11 @@ function App() {
             <Route exact path="/users/:id">
               <Profile />
             </Route>
+            <Route exact path="/Dashboard">
+              <Dashboard />
+            </Route>
           </div>
-          <Footer />
+          <Footer></Footer>
         </div>
       </Router>
     </ApolloProvider>
