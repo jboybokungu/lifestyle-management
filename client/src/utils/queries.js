@@ -33,6 +33,7 @@ export const QUERY_ME = gql`
 //query fitness goals. This will be used for Cards.js
 export const QUERY_GOALS = gql`
   query goals {
+
       
     
     }
@@ -42,27 +43,76 @@ export const QUERY_GOALS = gql`
 //query all fitness goal. This will be used inside each respecitive card
 export const QUERY_FITNESS = gql`
   query allFitnessGoals {
-
+    workouts {
+      _id
+      exercise
+      duration 
+    },
+    weightGoals {
+    _id
+    currentWeight
+    goalWeight
+    
+    }
   }
 `;
 
 //query a single fitness goal
-//CODE HERE
+export const QUERY_SINGLE_FITNESS = gql`
+  query fitnessGoal ($workoutId: ID!){
+    workout(workoutid: $id) {
+      _id
+      name
+      duration 
+    },
+    weightGoal {
+    _id
+    currentWeight
+    goalWeight
+    
+    }
+  }
+`;
+
 
 //query all food and drink goals in its respective card
-export const QUERY_FOOD = gql`
+export const QUERY_FOODS = gql`
   query allFoodGoals {
+    food {
+    _id
+    calories
+    }
+    water {
+    _id
+    ounses
+    }
   
   }
 `;
 
 
 //query a single food/drink goal
-//CODE HERE
+export const QUERY_FOOD = gql`
+  query foodGoal($foodId: ID!) {
+    food {
+    _id
+    calories
+    }
+    water {
+    _id
+    ounses
+    }
+  
+  }
+`;
 
 //query all sleep goals in its respective card
 export const QUERY_SLEEP = gql`
   query allSleepGoals {
+  sleep {
+  _id
+  hours
+  }
   
   }
 `;
@@ -75,7 +125,6 @@ export const QUERY_PROFILES = gql`
     profiles {
       _id
       name
-      skills
     }
   }
 `;
@@ -85,7 +134,6 @@ export const QUERY_SINGLE_PROFILE = gql`
     profile(profileId: $profileId) {
       _id
       name
-      skills
     }
   }
 `;
