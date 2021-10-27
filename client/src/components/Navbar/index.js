@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./index.css";
 import Auth from '../../utils/auth';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
   const logout = (event) => {
@@ -21,7 +23,7 @@ function Navbar() {
       </>
     );
   }
-If logged out show login controls
+
   return (
     <>
     <Container>
@@ -47,15 +49,19 @@ If logged out show login controls
           aria-expanded="false"
           aria-label="Toggle navigation"
         ></button>
+        
         </Container>
+        
 
 
 <Link className="col-md-3 col-lg-2 me-0 px-3" to="/login">
         Log-In
+        </Link>
 <Link className="col-md-3 col-lg-2 me-0 px-3" to="/signup">
         JOIN HERE
         Log-In
-    </> 
+        </Link>
+    
   )
 };
 
