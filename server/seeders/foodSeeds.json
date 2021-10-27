@@ -1,12 +1,12 @@
 [
     {
         "name": "Chicken",
-        "calories": "200 Calories",
-        "ounces": "8 ounces"
+        "calories": "200",
+        "ounces": "8"
     },
     {
         "name": "Ribeye Steak",
         "calories": "300",
-        "ounces": "6 ounces"
+        "ounces": "6"
     }
 ]

@@ -17,7 +17,7 @@ const fitnessSchema = new Schema({
         trim: true,
     },
     duration: {
-        type: Number,
+        type: String,
     }
 });
 

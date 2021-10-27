@@ -1,11 +1,14 @@
 const { Schema, model } = require('mongoose');
 
 const foodSchema = new Schema({
+    name: {
+        type: String,
+    },
     calories: {
         type: Number,
         required: true,
     },
-    ounses: {
+    ounces: {
         type: Number,
         required: true,
     }
