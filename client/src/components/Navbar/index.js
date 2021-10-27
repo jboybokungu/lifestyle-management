@@ -64,6 +64,7 @@ function Navbar() {
       </Link>
 </>
       )
+
 };
 
       export default Navbar;
