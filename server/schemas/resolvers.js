@@ -69,7 +69,20 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
+    addFitnessGoal: async (_, args) => {
+      const newFitnessGoal = await Fitness.create(args);
+      return newFitnessGoal;
+    },
+    addFoodGoal: async (_, args) => {
+      const newFoodGoal = await Food.create(args);
+      return newFoodGoal;
+    },
+    addSleepGoal: async (_, args) => {
+      const newSleepGoal = await Sleep.create(args);
+      return newSleepGoal;
+    },
+    
   }
 };
 

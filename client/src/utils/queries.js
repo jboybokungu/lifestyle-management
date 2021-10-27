@@ -31,17 +31,13 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_SINGLE_FITNESS = gql`
-  query fitnessGoal ($workoutId: ID!){
-    workout(workoutid: $id) {
+  query fitnessGoal ($fitnesstId: ID!){
+    fitnessGoal {
       _id
-      name
+      exercise
       duration 
-    },
-    weightGoal {
-    _id
-    currentWeight
-    goalWeight
-    
+      currentWeight
+      goalWeight 
     }
   }
 `;

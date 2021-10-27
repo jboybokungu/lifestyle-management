@@ -75,7 +75,7 @@ function App() {
             <Route exact path="/users/:id">
               <Profile />
             </Route>
-            <Route exact path="/Dashboard">
+            <Route exact path="/dashboard">
               <Dashboard />
             </Route>
           </div>

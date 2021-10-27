@@ -8,7 +8,6 @@ const typeDefs = gql`
     email: String
     password: String
   }
-
   type Fitness {
     _id: ID
     currentWeight: Int
@@ -21,8 +20,8 @@ const typeDefs = gql`
     name: String
     calories: Int
     ounces: Int
-    
   }
+  
   type Sleep {
     _id: ID
     hours: Int
@@ -49,6 +48,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
+    addFitnessGoal(currentWeight:Int, goalWeight: Int, exercise: String, duration:String): Fitness
+    addFoodGoal(name: String, calories:Int, ounces: Int): Food
+    addSleepGoal(hours: Int): Sleep
   }
 `;
 
