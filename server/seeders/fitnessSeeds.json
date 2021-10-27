@@ -1,0 +1,14 @@
+[
+    {
+        "currentWeight": "190 Lbs",
+        "goalWeight": "215",
+        "exercise": "Weight Lifting",
+        "Duration": "24 Weeks"
+    },
+    {
+        "currentWeight": "220 Lbs",
+        "goalWeight": "285",
+        "exercise": "Cardio",
+        "Duration": "12 Weeks"
+    }
+]

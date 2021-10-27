@@ -1,18 +1,22 @@
 const { gql } = require('apollo-server-express');
-
+// change users back to profile
+// added name to goal
 const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
     password: String
+    profile: [Profile]
   }
-  type Profile {
+
+  type User {
     _id: ID
     name:(userId: ID!)
   }
   type Goal {
     _id: ID
+    name: String
     fitness: [Fitness]
     food: [Food]
     sleep: [Sleep]
@@ -26,8 +30,9 @@ const typeDefs = gql`
   }
   type Food {
     _id: ID
+    name: String
     calories: Int
-    ounses: Int
+    ounces: Int
     
   }
   type Sleep {
