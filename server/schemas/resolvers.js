@@ -20,7 +20,9 @@ const resolvers = {
     goals: async () => {
       return Goal.find().sort({ createdAt: -1});
     },
+
     goal: async (_, args) => {
+
       return Goal.findOne({_id: goalId});
     },
   },
