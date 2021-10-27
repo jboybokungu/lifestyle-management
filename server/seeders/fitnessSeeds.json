@@ -1,14 +1,14 @@
 [
     {
-        "currentWeight": "190 Lbs",
+        "currentWeight": "190",
         "goalWeight": "215",
         "exercise": "Weight Lifting",
-        "Duration": "24 Weeks"
+        "duration": "24 Weeks"
     },
     {
-        "currentWeight": "220 Lbs",
+        "currentWeight": "220",
         "goalWeight": "285",
-        "exercise": "Cardio",
-        "Duration": "12 Weeks"
+        "exercise": "Run Cardio",
+        "duration": "12 Weeks"
     }
 ]

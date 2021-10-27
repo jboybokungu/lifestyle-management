@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User, Goal, Fitness, Food, Sleep, Profile} = require('../models');
+const { User, Fitness, Food, Sleep,} = require('../models');
 
 
 const resolvers = {
@@ -17,20 +17,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    goals: async () => {
-      return Goal.find().sort({ createdAt: -1});
-    },
-
-    goal: async (_, args) => {
-
-      return Goal.findOne({_id: goalId});
-    },
 
     allFitnessGoals: async (_, args) => {
       return Fitness.find().sort({ createdAt: -1});
     },
 
-    fitnessGoal: async (_, args) => {
+    fitnessGoal: async (_, {fitnessId}) => {
 
       return Fitness.findOne({_id: fitnessId});
     },
@@ -39,7 +31,7 @@ const resolvers = {
       return Food.find().sort({ createdAt: -1});
     },
 
-    foodGoal: async (_, args) => {
+    foodGoal: async (_, {foodId}) => {
 
       return Food.findOne({_id: foodId});
     },
@@ -48,42 +40,14 @@ const resolvers = {
       return Sleep.find().sort({ createdAt: -1});
     },
 
-    foodGoal: async (_, args) => {
+    foodGoal: async (_,{sleepId}) => {
 
       return Sleep.findOne({_id: sleepId});
-    },
-    allProfiles: async (_, args) => {
-      return Profile.find().sort({ createdAt: -1});
-    },
-
-    foodGoal: async (_, args) => {
-
-      return Profile.findOne({_id: sleepId});
     },
 
   },
 
   Mutation: {
-    addGoal: async (parent, { goalText, goalAuthor}) => {
-      return Goal.create({ goalText, goalAuthor});
-    },
-
-    updateGoal: async (parent, { goalId, goalText}) => {
-      return Goal.findOneAndUpdate (
-        {_id: goalId},
-        {
-          $addToSet : { goals: {goalText} },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
-    },
-    
-    removeGoal: async (parent, { goalId} ) => {
-      return Goal.findOneAndDelete({_id: goalId });
-    },
     addUser: async (_, args) => {
       const user = await User.create(args);
       const token = signToken(user);

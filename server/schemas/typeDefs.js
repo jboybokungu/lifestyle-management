@@ -7,19 +7,11 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    profile: [Profile]
   }
 
-  type User {
+  type Users {
     _id: ID
-    name:(userId: ID!)
-  }
-  type Goal {
-    _id: ID
-    name: String
-    fitness: [Fitness]
-    food: [Food]
-    sleep: [Sleep]
+    name:String
   }
   type Fitness {
     _id: ID
@@ -49,16 +41,18 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     me: User
-    goals: [Goal]
-    goal(id: ID!): Goal
+    allFitnessGoals: Fitness
+    fitnessGoal(fitnessId: ID!): Fitness
+    allFoodGoals: Food
+    foodGoal(foodId: ID!): Food
+    allSleepGoals: Sleep
+    sleepGoal(sleepId: ID!): Food
+
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addGoal(exercise:String): Goal
-    updateGoal(exercise:String): Goal
-    removeGoal(exercise:String): Goal
   }
 `;
 

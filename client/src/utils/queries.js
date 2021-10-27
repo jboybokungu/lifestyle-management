@@ -30,34 +30,6 @@ export const QUERY_ME = gql`
   }
 `;
 
-//query fitness goals. This will be used for Cards.js
-export const QUERY_GOALS = gql`
-  query goals {
-
-      
-    
-    }
-  }
-`;
-
-//query all fitness goal. This will be used inside each respecitive card
-export const QUERY_FITNESS = gql`
-  query allFitnessGoals {
-    workouts {
-      _id
-      exercise
-      duration 
-    },
-    weightGoals {
-    _id
-    currentWeight
-    goalWeight
-    
-    }
-  }
-`;
-
-//query a single fitness goal
 export const QUERY_SINGLE_FITNESS = gql`
   query fitnessGoal ($workoutId: ID!){
     workout(workoutid: $id) {
