@@ -4,7 +4,6 @@ import "./index.css";
 import Auth from '../../utils/auth';
 // import Button from 'react-bootstrap/Button';
 // import BootstrapNavbar from 'react-bootstrap/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
   const logout = (event) => {
