@@ -19,7 +19,7 @@ const resolvers = {
     },
 
     allFitnessGoals: async (_, args) => {
-      return Fitness.find().sort({ createdAt: -1});
+      return Fitness.find();
     },
 
     fitnessGoal: async (_, {fitnessId}) => {
@@ -28,7 +28,7 @@ const resolvers = {
     },
 
     allFoodGoals: async (_, args) => {
-      return Food.find().sort({ createdAt: -1});
+      return Food.find();
     },
 
     foodGoal: async (_, {foodId}) => {
@@ -37,7 +37,7 @@ const resolvers = {
     },
 
     allSleepGoals: async (_, args) => {
-      return Sleep.find().sort({ createdAt: -1});
+      return Sleep.find();
     },
 
     foodGoal: async (_,{sleepId}) => {

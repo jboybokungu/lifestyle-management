@@ -13,7 +13,7 @@ const typeDefs = gql`
     currentWeight: Int
     goalWeight: Int
     exercise: String
-    duration: Int
+    duration: String
   }
   type Food {
     _id: ID
@@ -36,11 +36,11 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     me: User
-    allFitnessGoals: Fitness
+    allFitnessGoals: [Fitness]
     fitnessGoal(fitnessId: ID!): Fitness
-    allFoodGoals: Food
+    allFoodGoals: [Food]
     foodGoal(foodId: ID!): Food
-    allSleepGoals: Sleep
+    allSleepGoals: [Sleep]
     sleepGoal(sleepId: ID!): Food
 
   }
