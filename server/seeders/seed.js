@@ -18,6 +18,7 @@ db.once('open', async () => {
     await Goals.deleteMany({});
     await Goals.create(goals);
   } catch (err) {
+    console.log('all done!')
     console.error(err);
     process.exit(1);
   }
