@@ -24,17 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+export const ADD_PROFILE = gql`
+  mutation addProfile($profileId: ID!) {
+    addProfile(profileId: $profileId) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
+      name
+      Skills
     }
   }
 `;
