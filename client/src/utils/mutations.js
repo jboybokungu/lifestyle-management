@@ -23,4 +23,36 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_GOAL = gql`
+  mutation addGoal(
+      $title: String,
+      $currentWeight: Float, 
+      $goalWeight: Float, 
+      $exercise: String,
+      $duration: Int,
+      $ounces: Number,
+      $calories: Number
+    ) {
+    addFitnessGoal(
+      title: $title,
+      currentWeight: $currentWeight,
+      goalWeight: $goalWeight,
+      exercise: $exercise,
+      duration: $duration,
+      ounces: $ounces,
+      calories: $calories
+    ) {
+      goal {
+        _id
+        title
+        currentWeight
+        goalWeight
+        exercise
+        duration
+        calories
+        ounces
+      }
+    }
+  }
+`;
 

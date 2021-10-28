@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import { Link } from "react-router-dom";
 
-import "./index.css";
+// import "./index.css";
 
 
 
-export default Goals;
+// export default Goals;
