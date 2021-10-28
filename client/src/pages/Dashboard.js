@@ -1,94 +1,70 @@
 import React from "react";
-import { Col, Row, Container } from "reactstrap";
-import Dashboard from "pages";
+import {
+  Card,
+  CardGroup,
+  CardImg,
+  CardTitle,
+  CardBody,
+  CardSubtitle,
+  CardText,
+} from "reactstrap";
 
+import GoalForm from '../components/GoalForm';
 function Dashboard() {
-  return (
-    <Container>
-      <Row>
-        <Col className="bg-light border">.col</Col>
-      </Row>
-      <Row>
-        <Col className="bg-light border">.col</Col>
-        <Col className="bg-light border">.col</Col>
-        <Col className="bg-light border">.col</Col>
-        <Col className="bg-light border">.col</Col>
-      </Row>
-      <Row>
-        <Col className="bg-light border" xs="3">
-          .col-3
-        </Col>
-        <Col className="bg-light border" xs="auto">
-          .col-auto - variable width content
-        </Col>
-        <Col className="bg-light border" xs="3">
-          .col-3
-        </Col>
-      </Row>
-      <Row>
-        <Col className="bg-light border" xs="6">
-          .col-6
-        </Col>
-        <Col className="bg-light border" xs="6">
-          .col-6
-        </Col>
-      </Row>
-      <Row>
-        <Col className="bg-light border" sm="4" xs="6">
-          .col-6 .col-sm-4
-        </Col>
-        <Col className="bg-light border" sm="4" xs="6">
-          .col-6 .col-sm-4
-        </Col>
-        <Col className="bg-light border" sm="4">
-          .col-sm-4
-        </Col>
-      </Row>
-      <Row>
-        <Col
-          className="bg-light border"
-          sm={{
-            offset: 1,
-            order: 2,
-            size: 6,
-          }}
-        >
-          .col-sm-6 .order-sm-2 .offset-sm-1
-        </Col>
-      </Row>
-      <Row>
-        <Col
-          className="bg-light border"
-          md={{
-            offset: 3,
-            size: 6,
-          }}
-          sm="12"
-        >
-          .col-sm-12 .col-md-6 .offset-md-3
-        </Col>
-      </Row>
-      <Row>
-        <Col
-          className="bg-light border"
-          sm={{
-            offset: 1,
-            size: "auto",
-          }}
-        >
-          .col-sm-auto .offset-sm-1
-        </Col>
-        <Col
-          className="bg-light border"
-          sm={{
-            offset: 1,
-            size: "auto",
-          }}
-        >
-          .col-sm-auto .offset-sm-1
-        </Col>
-      </Row>
-    </Container>
+    return (
+     <div>
+      <GoalForm type="fitness" />
+        <CardGroup>
+         <Card>
+          <CardImg
+          alt="Sleep"
+          src="https://images.unsplash.com/photo-1517912172058-994f5e342dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+          top
+          width="100%"
+        />
+        <CardBody>
+          <CardTitle tag="h5"></CardTitle>
+          <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
+          <CardText className="text-center">SLEEP</CardText>
+          {/* <Button>
+        Button
+      </Button> */}
+        </CardBody>
+      </Card>
+      <Card>
+        <CardImg
+          alt="Fitness"
+          src="https://images.unsplash.com/photo-1610543123792-135b26601797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+          top
+          width="100%"
+        />
+        <CardBody>
+          <CardTitle tag="h5"></CardTitle>
+          <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
+          <CardText className="text-center"> FITNESS</CardText>
+          {/* <Button>
+        Button
+      </Button> */}
+        </CardBody>
+      </Card>
+      <Card>
+        <CardImg
+          alt="Diet"
+          src="https://images.unsplash.com/photo-1623855244697-5d8fbe9c7892?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+          top
+          width="100%"
+        />
+        <CardBody>
+          <CardTitle tag="h5"></CardTitle>
+          <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
+          <CardText className="text-center">FOOD</CardText>
+          {/* <Button>
+        Button
+      </Button> */}
+        </CardBody>
+      </Card>
+    </CardGroup>
+      </div>
   );
 }
 
