@@ -8,25 +8,17 @@ const typeDefs = gql`
     email: String
     password: String
   }
-  type Fitness {
+  type Goal {
     _id: ID
+    title: String
+    category: String
+    calories: Int
+    ounces: Int
     currentWeight: Int
     goalWeight: Int
     exercise: String
-    duration: String
+    duration: Int
   }
-  type Food {
-    _id: ID
-    name: String
-    calories: Int
-    ounces: Int
-  }
-  
-  type Sleep {
-    _id: ID
-    hours: Int
-  }
-
   type Auth {
     token: ID!
     user: User
@@ -36,21 +28,25 @@ const typeDefs = gql`
     users: [User]
     user(id: ID!): User
     me: User
-    allFitnessGoals: [Fitness]
-    fitnessGoal(fitnessId: ID!): Fitness
-    allFoodGoals: [Food]
-    foodGoal(foodId: ID!): Food
-    allSleepGoals: [Sleep]
-    sleepGoal(sleepId: ID!): Food
+    getGoal: [Goal]
+    addGoal: [Goal]
+    allFitnessGoals: [Goal]
+    fitnessGoal(fitnessId: ID!): Goal
+    allFoodGoals: [Goal]
+    foodGoal(foodId: ID!): Goal
+    allSleepGoals: [Goal]
+    sleepGoal(sleepId: ID!): Goal
 
   }
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addFitnessGoal(currentWeight:Int, goalWeight: Int, exercise: String, duration:String): Fitness
-    addFoodGoal(name: String, calories:Int, ounces: Int): Food
-    addSleepGoal(hours: Int): Sleep
+    addFitnessGoal(currentWeight:Int, goalWeight: Int, exercise:    String, duration:String): Goal
+    addFoodGoal(name: String, calories:Int, ounces: Int): Goal
+    addSleepGoal(hours: Int): Goal
+    goal(title: String,category: String, calories: Int, ounces: Int,currentWeight: Int, goalWeight: Int, exercise: String, duration: Int): Goal
+
   }
 `;
 
