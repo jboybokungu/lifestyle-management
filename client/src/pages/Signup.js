@@ -46,13 +46,12 @@ const Signup = () => {
         </p>
       );
     }
-   
+
     return (
-      
       <form className="text-center" onSubmit={handleFormSubmit}>
-        <Form >
+        <Form>
           <Row xs="3">
-          <Col md={6} >
+            <Col md={6}>
               <FormGroup>
                 <Label for="Username"></Label>
                 <input
@@ -74,21 +73,23 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-               </FormGroup>
-                  <FormGroup>
-                    <Label for="Password"></Label>
-                    <input
-                      className="password text-center"
-                      placeholder="******"
-                      name="password"
-                      type="password"
-                      value={formState.password}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
-                  <Button outline color="secondary" type="submit">Submit</Button>{' '} 
-               </Col>
-          </Row >
+              </FormGroup>
+              <FormGroup>
+                <Label for="Password"></Label>
+                <input
+                  className="password text-center"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+              </FormGroup>
+              <Button outline color="secondary" type="submit">
+                Submit
+              </Button>{" "}
+            </Col>
+          </Row>
         </Form>
       </form>
     );
@@ -96,7 +97,7 @@ const Signup = () => {
 
   return (
     <main>
-      <h4 class="text-center">Sign Up</h4>
+      <h4>Sign Up</h4>
       <div className="text-danger">
         {renderForm()}
         {error && <div>{error.message}</div>}
