@@ -5,9 +5,8 @@ import { ADD_GOAL } from '../../utils/mutations';
 
 const GoalForm = (props) => {
   const [formState, setFormState] = useState({
-    title: '',
-    calories: null,
-    ounces: null,
+    title: 'TestTitle',
+    category: "TestCategory",
     currentWeight: null,
     goalWeight: null,
     exercise: null,
@@ -19,15 +18,17 @@ const GoalForm = (props) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(formState)
     // On form submit, perform mutation and pass in form data object as arguments
     // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
     try {
       const { data } = addGoal({
-        variables: { ...formState },
+        variables: { 
+          ...formState
+         },
       });
 
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
