@@ -15,11 +15,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/index';
 
-
-
-
 // import { useState } from 'react';
-
 
 import './index.css';
 
@@ -46,8 +42,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-
 
 function App() {
 
