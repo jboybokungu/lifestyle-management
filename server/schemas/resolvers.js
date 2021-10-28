@@ -40,7 +40,7 @@ const resolvers = {
       return Sleep.find();
     },
 
-    foodGoal: async (_,{sleepId}) => {
+    sleepGoal: async (_,{sleepId}) => {
 
       return Sleep.findOne({_id: sleepId});
     },
