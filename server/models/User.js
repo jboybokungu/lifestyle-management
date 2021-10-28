@@ -18,7 +18,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  }
+  },
+  goals: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Goal"
+    }
+  ]
 });
 
 userSchema.pre('save', async function (next) {
