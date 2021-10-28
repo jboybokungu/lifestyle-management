@@ -19,32 +19,20 @@ const resolvers = {
     },
 
     allFitnessGoals: async (_, args) => {
-      return Fitness.find();
+      return Goal.find({ category: 'fitness' });
     },
-
-    fitnessGoal: async (_, {fitnessId}) => {
-
-      return Fitness.findOne({_id: fitnessId});
-    },
-
     allFoodGoals: async (_, args) => {
-      return Food.find();
+      return Food.find({ category: 'food' });
     },
-
-    foodGoal: async (_, {foodId}) => {
-
-      return Food.findOne({_id: foodId});
-    },
-
     allSleepGoals: async (_, args) => {
-      return Sleep.find();
+      return Food.find({ category: 'sleep' });
     },
-
-    sleepGoal: async (_,{sleepId}) => {
-
-      return Sleep.findOne({_id: sleepId});
+    getGoal: async (_, {id}) => {
+      return Goal.findOne({_id: id});
     },
-
+    addGoal: async (_, args) => {
+      return Goal.create(args);
+    }
   },
 
   Mutation: {
