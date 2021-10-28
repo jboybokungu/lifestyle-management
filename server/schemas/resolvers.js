@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User, Fitness, Food, Sleep,} = require('../models');
+const { User, Goal} = require('../models');
 
 
 const resolvers = {
@@ -22,10 +22,10 @@ const resolvers = {
       return Goal.find({ category: 'fitness' });
     },
     allFoodGoals: async (_, args) => {
-      return Food.find({ category: 'food' });
+      return Goal.find({ category: 'food' });
     },
     allSleepGoals: async (_, args) => {
-      return Food.find({ category: 'sleep' });
+      return Goal.find({ category: 'sleep' });
     },
     getGoal: async (_, {id}) => {
       return Goal.findOne({_id: id});
@@ -58,16 +58,20 @@ const resolvers = {
 
       return { token, user };
     },
+    goal: async (_, args) => {
+      const goal = await Goal.create(args);
+      return goal;
+    },
     addFitnessGoal: async (_, args) => {
-      const newFitnessGoal = await Fitness.create(args);
+      const newFitnessGoal = await Goal.create(args);
       return newFitnessGoal;
     },
     addFoodGoal: async (_, args) => {
-      const newFoodGoal = await Food.create(args);
+      const newFoodGoal = await Goal.create(args);
       return newFoodGoal;
     },
     addSleepGoal: async (_, args) => {
-      const newSleepGoal = await Sleep.create(args);
+      const newSleepGoal = await Goal.create(args);
       return newSleepGoal;
     },
     

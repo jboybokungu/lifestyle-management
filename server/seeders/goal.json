@@ -1,0 +1,25 @@
+[
+    {
+        "title": "October Goal",
+        "category": "Fitness",
+        "calories": "200",
+        "ounces": "8",
+        "currentWeight": "210",
+        "goalWeight": "200",
+        "exercise": "Run 2 miles",
+        "duration": "120"
+    },
+    {
+        "title": "November Goal",
+        "category": "Food",
+        "calories": "200",
+        "ounces": "8",
+        "currentWeight": "150",
+        "goalWeight": "145",
+        "exercise": "Run 2 miles",
+        "duration": "120"
+
+
+    }
+   
+]
