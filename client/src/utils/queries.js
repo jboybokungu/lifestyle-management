@@ -29,6 +29,16 @@ export const QUERY_ME = gql`
     }
   }
 `;
+export const QUERY_FITNESS = gql`
+  query allFitnessGoals {
+    allFitnessGoals {
+      exercise
+      duration 
+      currentWeight
+      goalWeight 
+  }
+  }
+`;
 
 export const QUERY_SINGLE_FITNESS = gql`
   query fitnessGoal ($fitnesstId: ID!){
@@ -43,67 +53,52 @@ export const QUERY_SINGLE_FITNESS = gql`
 `;
 
 
-//query all food and drink goals in its respective card
+
 export const QUERY_FOODS = gql`
   query allFoodGoals {
-    food {
-    _id
-    calories
+    allFoodGoals {
+      name
+      calories
+      ounces
     }
-    water {
-    _id
-    ounses
-    }
-  
   }
 `;
 
 
 //query a single food/drink goal
-export const QUERY_FOOD = gql`
+export const QUERY_SINGLE_FOOD = gql`
   query foodGoal($foodId: ID!) {
-    food {
-    _id
-    calories
+    foodGoal {
+      _id
+      name
+      calories
+      ounces
     }
-    water {
-    _id
-    ounses
-    }
-  
   }
 `;
 
 //query all sleep goals in its respective card
 export const QUERY_SLEEP = gql`
   query allSleepGoals {
-  sleep {
-  _id
-  hours
-  }
-  
-  }
-`;
-
-//query a single sleep goal
-//CODE HERE
-
-export const QUERY_PROFILES = gql`
-  query allProfiles {
-    profiles {
+    allSleepGoals {
       _id
-      name
-    }
+      hours
+    }  
+  }
+`;
+export const QUERY_SINGLE_SLEEP = gql`
+  query sleepGoals {
+    sleepGoals {
+      _id
+      hours
+    }  
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      name
-    }
-  }
-`;
+
+
+
+
+
 
 
