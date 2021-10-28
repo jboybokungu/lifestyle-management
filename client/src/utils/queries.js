@@ -29,6 +29,23 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_GET_GOAL = gql`
+  query getGoal {
+    getGoal {
+      _id
+      title
+      category
+      calories
+      ounces
+      currentWeight
+      goalWeight
+      exercise
+      duration
+    }
+  }
+`;
+
 export const QUERY_FITNESS = gql`
   query allFitnessGoals {
     allFitnessGoals {

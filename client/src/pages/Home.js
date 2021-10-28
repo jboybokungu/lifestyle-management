@@ -6,6 +6,7 @@ import Auth from '../utils/auth';
 import { QUERY_USERS } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
+import { Spinner } from "reactstrap";
 
 
 const Home = () => {
@@ -14,7 +15,11 @@ const Home = () => {
 
   const renderUserList = () => {
     if (loading) {
-      return <h2>Loading...</h2>
+      return <div>
+        <h2>Loading...</h2>
+      <Spinner color="dark" type="grow">Loading...</Spinner>
+      </div>
+
     } else {
       return <UserList users={users} title="List of Users" />
     }
