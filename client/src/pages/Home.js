@@ -1,29 +1,15 @@
 // Node Modules
 import React from 'react';
-import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS } from '../utils/queries';
+// import { QUERY_USERS } from '../utils/queries';
 // Components
-import UserList from '../components/UserList';
-import { Spinner } from "reactstrap";
-
+// import UserList from '../components/UserList';
+import Login from './Login';
+import Signup from './Signup';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
-
-  const renderUserList = () => {
-    if (loading) {
-      return <div>
-        <h2>Loading...</h2>
-      <Spinner color="dark" type="grow">Loading...</Spinner>
-      </div>
-
-    } else {
-      return <UserList users={users} title="List of Users" />
-    }
-  } 
+ 
 
   const renderUsername = () => {
     if (!Auth.loggedIn()) return null;
@@ -31,12 +17,13 @@ const Home = () => {
   }
 
   return (
-    <main>
+    <main id="holder">
       <div>
         {renderUsername()}
       </div>
-      <div>
-        {renderUserList()}
+      <div className="credential-controls">
+        <section><Login/></section>
+        <section><Signup/></section>
       </div>
     </main>
   );

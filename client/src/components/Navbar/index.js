@@ -40,12 +40,13 @@ const Navbar = () => {
             <Link className="nav-link" to="/dashboard">Dashboard
               </Link>
             </li>
-            <Link className="nav-link" to="/login/signup">Home
-              </Link>
+            {/* <Link className="nav-link" to="/">Home
+              </Link> */}
             <li className="nav-item">
               <Link className="nav-link" to="/">Log-Out</Link>
             </li>
             <li className="nav-item">
+
             <Link className="nav-link" to="/me/users/:id">Profile <span className="navbar-toggler-icon"></span></Link>
               
               

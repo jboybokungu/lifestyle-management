@@ -5,7 +5,7 @@ const User = ({ _id, username }) => {
   return (
     <div key={_id}>
       <h4>
-        <Link to={`/users/${_id}`}>
+        <Link to={`/me/${_id}`}>
           {username}
         </Link>
       </h4>
