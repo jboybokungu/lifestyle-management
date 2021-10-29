@@ -49,7 +49,7 @@ const Login = () => {
       )
     }
     return (
-      <form className="text-center" onSubmit={handleFormSubmit}>
+      <form className="text-center">
         <Form>
           <Row xs="3">
             <Col md={6}>
@@ -75,7 +75,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
               </FormGroup>
-              <Button outline color="secondary" type="submit">
+              <Button outline color="secondary" type="submit" onClick={handleFormSubmit}>
                 Submit
               </Button>{" "}
             </Col>

@@ -15,7 +15,18 @@ export const QUERY_USER = gql`
     user(id: $id) {
       _id
       username
-      email
+      email 
+      goals {
+      _id
+      title
+      category
+      calories
+      ounces
+      currentWeight
+      goalWeight
+      exercise
+      duration
+    }
     }
   }
 `;
@@ -26,6 +37,17 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      goals {
+      _id
+      title
+      category
+      calories
+      ounces
+      currentWeight
+      goalWeight
+      exercise
+      duration
+    }
     }
   }
 `;
