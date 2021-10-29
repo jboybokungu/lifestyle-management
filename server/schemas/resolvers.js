@@ -9,11 +9,11 @@ const resolvers = {
       return User.find();
     },
     user: async (_, args) => {
-      return User.findOne({ _id: args.id });
+      return User.findOne({ _id: args.id }).populate('goals');
     },
     me: async (_, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate('goals');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -31,11 +31,7 @@ const resolvers = {
       const user = await User.findById({_id:context.user._id}).populate("goals")
       console.log(user);
       return user.goals
-
-    },
-    // addGoal: async (_, args) => {
-    //   return Goal.create(args);
-    // }
+    }
   },
 
   Mutation: {

@@ -4,7 +4,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 
@@ -16,11 +16,7 @@ const Profile = () => {
     variables: { id },
   });
 
-  // Get a list of all users
-  const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
-
   const user = data?.me || data?.user || {};
-  const users = usersData?.users || [];
 
   if (error) console.log(error);
 
@@ -42,11 +38,39 @@ const Profile = () => {
     );
   }
 
-  const renderUserList = () => {
-    if (usersLoading) return null;
+  const renderUserGoals = () => {
+    if (loading) return null;
     // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter(o => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
+    const goals = user?.goals?.length ? user.goals : [];
+    console.log(user);
+    return (
+      <table className="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Current Weight</th>
+            <th scope="col">Goal Weight</th>
+            <th scope="col">Exercise</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Calories</th>
+          </tr>
+        </thead>
+        <tbody>
+        {goals.map(goal => (
+          <tr>
+            <td>{goal.title}</td>
+            <td>{goal.category}</td>
+            <td>{goal.currentWeight}</td>
+            <td>{goal.goalWeight}</td>
+            <td>{goal.exercise}</td>
+            <td>{goal.duration}</td>
+            <td>{goal.calories}</td>
+          </tr>)
+        )}
+        </tbody>
+      </table>
+    )
   };
 
   const renderCurrentUserInfo = () => {
@@ -57,7 +81,7 @@ const Profile = () => {
         <li>email: {user.email}</li>
       </ul>
     );
- }
+  }
 
   return (
     <div>
@@ -66,7 +90,7 @@ const Profile = () => {
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
-        {renderUserList()}
+        {renderUserGoals()}
       </div>
     </div>
   );

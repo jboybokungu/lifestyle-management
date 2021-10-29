@@ -25,8 +25,6 @@ const goalSchema = new Schema({
     },
     exercise: {
         type: String,
-        minlength: 10,
-        maxlength: 280,
         trim: true,
     },
     duration: {

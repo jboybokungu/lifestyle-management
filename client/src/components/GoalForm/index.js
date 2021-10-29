@@ -26,26 +26,27 @@ const GoalForm = (props) => {
     // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
     try {
       console.log(formState);
-      const { data } = addGoal({
+      await addGoal({
         variables: {
-
           ...formState, category: props.type
         },
       });
-
-      // window.location.reload();
+      
+      window.location.replace('/me');
     } catch (err) {
       console.error(err);
     }
   };
 
   const handleChange = (event) => {
-
+    const { name, value } = event.target;
+    console.log(name, value);
     const newValue = (
       name === "goalWeight" || 
       name === "currentWeight" || 
       name === "calories" ||
-      name === "duration"
+      name === "duration" ||
+      name === "ounces"
     ) ? Number(value) : value;
     setFormState(form => ({ ...form, [name]: newValue }));
 
@@ -58,16 +59,6 @@ const GoalForm = (props) => {
         return (
           <div className="center">
             <>
-              <div className="col-12 ">
-                <input
-                  name="category"
-                  type="number"
-                  placeholder="Enter the category of your goal"
-                  value={formState.category}
-                  className="form-input w-80"
-                  onChange={handleChange}
-                />
-              </div>
               <div className="col-12">
                 <input
                   name="currentWeight"
@@ -115,17 +106,6 @@ const GoalForm = (props) => {
       case "food": {
         return (
           <>
-
-            <div className="col-12">
-              <input
-                name="category"
-                type="number"
-                placeholder="Enter the category of your goal"
-                value={formState.category}
-                className="form-input w-100"
-                onChange={handleChange}
-              />
-            </div>
             <div className="col-12">
               <input
                 name="calories"
@@ -142,19 +122,6 @@ const GoalForm = (props) => {
       case "sleep": {
         return (
           <>
-            <div className="col-12 justify-content-center">
-              <input
-                name="calories"
-
-                name="category"
-                type="number"
-                placeholder="Enter the category of your goal"
-                value={formState.category}
-                className="form-input w-100"
-                onChange={handleChange}
-              />
-            </div>
-
             <div className="col-12 justify-content-center">
               <input
                 name="sleepDuration"
@@ -186,9 +153,6 @@ const GoalForm = (props) => {
         );
       }
       default: return null;
-
-      default:
-
     }
   };
 
@@ -199,7 +163,8 @@ const GoalForm = (props) => {
         <div className="col-12 justify-content-center">
           <input
             name="title"
-            placeholder="Here's a new goal..."
+            type="text"
+            placeholder="What's your goal"
             value={formState.title}
             className="form-input w-90"
             onChange={handleChange}
