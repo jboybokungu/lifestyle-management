@@ -1,0 +1,35 @@
+.credential-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.credential-control > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 8px;
+  background-color: blue;
+  
+}
+.center-goals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    
+  }
+  .center-goals input{
+    margin:4px;
+}
+
+.center-goals input:last-of-type {
+    margin-bottom: 8px;
+}
+.center{
+    justify-content: center;
+}
