@@ -30,9 +30,9 @@ export const ADD_GOAL = gql`
       $currentWeight: Int,
       $goalWeight: Int, 
       $exercise: String,
-      $duration: String,
+      $duration: Int,
     ) {
-    addFitnessGoal(
+    addGoal(
       title: $title,
       category: $category
       currentWeight: $currentWeight,

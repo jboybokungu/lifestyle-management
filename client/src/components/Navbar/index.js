@@ -46,7 +46,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Log-Out</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/me/users/:id">Profile <span class="navbar-toggler-icon"></span></Link>
+            <Link className="nav-link" to="/me/users/:id">Profile <span className="navbar-toggler-icon"></span></Link>
               
               
 
