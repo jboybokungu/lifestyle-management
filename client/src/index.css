@@ -4,3 +4,21 @@ html, * {
   box-sizing: border-box;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
+.credential-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.credential-controls > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 8px;
+}
+
+#holder {
+  min-height: 100vh;
+}
