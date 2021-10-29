@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import {Button} from "reactstrap";
+import { Button } from "reactstrap";
 import { ADD_GOAL } from "../../utils/mutations";
 import "../GoalForm/index.css";
-
 
 const GoalForm = (props) => {
   const [formState, setFormState] = useState({
@@ -55,7 +54,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="Enter the category of your goal"
                   value={formState.category}
-                  className="form-input w-60"
+                  className="form-input w-80"
                   onChange={handleChange}
                 />
               </div>
@@ -65,7 +64,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="Enter your current Weight"
                   value={formState.currentWeight}
-                  className="form-input w-60"
+                  className="form-input w-80"
                   onChange={handleChange}
                 />
               </div>
@@ -75,7 +74,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="Enter your goal weight"
                   value={formState.goalWeight}
-                  className="form-input w-60"
+                  className="form-input w-80"
                   onChange={handleChange}
                 />
               </div>
@@ -85,7 +84,7 @@ const GoalForm = (props) => {
                   type="text"
                   placeholder="Enter your exercises?"
                   value={formState.exercise}
-                  className="form-input w-60"
+                  className="form-input w-80"
                   onChange={handleChange}
                 />
               </div>
@@ -95,7 +94,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="How long will it take you to reach your goal?"
                   value={formState.duration}
-                  className="form-input w-"
+                  className="form-input w-80"
                   onChange={handleChange}
                 />
               </div>
@@ -106,7 +105,7 @@ const GoalForm = (props) => {
       case "food": {
         return (
           <>
-            <div className="col-12 ">
+            <div className="col-12">
               <input
                 name="category"
                 type="number"
@@ -162,25 +161,25 @@ const GoalForm = (props) => {
 
   return (
     <div className="col-12 col-lg-3 text-center">
-      <h3 >What are we accomplishing today, Boss?</h3>
-      <form className="text-center " onSubmit={handleFormSubmit}>
+      <h3>Hello Boss! What are we accomplishing today?</h3>
+      <form onSubmit={handleFormSubmit}>
         <div className="col-12 justify-content-center">
           <input
             name="title"
             placeholder="Here's a new goal..."
             value={formState.title}
-            className="form-input w-100"
+            className="form-input w-90"
             onChange={handleChange}
           />
         </div>
         {buildForm()}
         <div className="col-12 col-lg-3 justify-content-center">
-        <Button outline color="secondary" type="submit">
+          <Button outline color="secondary" type="submit">
             Add Goal
-            </Button>
+          </Button>
         </div>
         {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3 text-center justify-content-center">
+          <div className="col-12 my-3 bg-danger text-dark p-3 text-center justify-content-center">
             Something went wrong...
           </div>
         )}

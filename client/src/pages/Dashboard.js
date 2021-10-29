@@ -16,7 +16,7 @@ function Dashboard() {
     setGoal(event.target.value);
   };
   return (
-    <div>
+    <div className="center-goals">
       <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
         <option value="fitness">Fitness</option>
         <option value="food">Food</option>
