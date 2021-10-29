@@ -42,7 +42,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addFitnessGoal(title: String!, category: String!, currentWeight:Int, goalWeight: Int, exercise: String, duration:String): Goal
+    addGoal(title: String!, category: String!, currentWeight:Int, goalWeight: Int, exercise: String, duration:Int): Goal
     addFoodGoal(name: String, calories:Int, ounces: Int): Goal
     addSleepGoal(hours: Int): Goal
     goal(title: String,category: String, calories: Int, ounces: Int,currentWeight: Int, goalWeight: Int, exercise: String, duration: Int): Goal

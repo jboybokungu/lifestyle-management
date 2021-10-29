@@ -27,12 +27,15 @@ const resolvers = {
     allSleepGoals: async (_, args) => {
       return Goal.find({ category: 'sleep' });
     },
-    getGoal: async (_, {id}) => {
-      return Goal.findOne({_id: id});
+    getGoal: async (_, {id}, context) => {
+      const user = await User.findById({_id:context.user._id}).populate("goals")
+      console.log(user);
+      return user.goals
+
     },
-    addGoal: async (_, args) => {
-      return Goal.create(args);
-    }
+    // addGoal: async (_, args) => {
+    //   return Goal.create(args);
+    // }
   },
 
   Mutation: {
@@ -62,8 +65,10 @@ const resolvers = {
       const goal = await Goal.create(args);
       return goal;
     },
-    addFitnessGoal: async (_, args) => {
+    addGoal: async (_, args, context) => {
+      console.log(context.user);
       const newFitnessGoal = await Goal.create(args);
+      const user = await User.findOneAndUpdate({_id:context.user._id}, {$push:{goals:newFitnessGoal._id}})
       return newFitnessGoal;
     },
     addFoodGoal: async (_, args) => {

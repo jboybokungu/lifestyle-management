@@ -25,9 +25,11 @@ const GoalForm = (props) => {
     // On form submit, perform mutation and pass in form data object as arguments
     // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
     try {
+      console.log(formState);
       const { data } = addGoal({
         variables: {
-          ...formState,
+
+          ...formState, category: props.type
         },
       });
 
@@ -38,8 +40,16 @@ const GoalForm = (props) => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState((form) => ({ ...form, [name]: value }));
+
+    const newValue = (
+      name === "goalWeight" || 
+      name === "currentWeight" || 
+      name === "calories" ||
+      name === "duration"
+    ) ? Number(value) : value;
+    setFormState(form => ({ ...form, [name]: newValue }));
+
+
   };
 
   const buildForm = () => {
@@ -105,6 +115,7 @@ const GoalForm = (props) => {
       case "food": {
         return (
           <>
+
             <div className="col-12">
               <input
                 name="category"
@@ -133,6 +144,8 @@ const GoalForm = (props) => {
           <>
             <div className="col-12 justify-content-center">
               <input
+                name="calories"
+
                 name="category"
                 type="number"
                 placeholder="Enter the category of your goal"
@@ -155,7 +168,27 @@ const GoalForm = (props) => {
           </>
         );
       }
+
+      case 'sleep': {
+        return (
+          <>
+          <div className="col-12">
+            <input
+              name="sleepDuration"
+              type="text"
+              placeholder="How long do you want to sleep?"
+              value={formState.sleepDuration}
+              className="form-input w-100"
+              onChange={handleChange}
+            />
+          </div>
+          </>
+        );
+      }
+      default: return null;
+
       default:
+
     }
   };
 
