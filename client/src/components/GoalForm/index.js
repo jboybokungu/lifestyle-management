@@ -6,12 +6,12 @@ import { ADD_GOAL } from '../../utils/mutations';
 const GoalForm = (props) => {
   const [formState, setFormState] = useState({
     title: '',
-    category: "TestCategory",
+    category: null,
     currentWeight: null,
     goalWeight: null,
     exercise: null,
     duration: null,
-    calory: null,
+    calories: null,
     sleepDuration: null
   });
 
@@ -25,9 +25,9 @@ const GoalForm = (props) => {
     // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
     try {
       const { data } = addGoal({
-        variables: { 
+        variables: {
           ...formState
-         },
+        },
       });
 
       // window.location.reload();
@@ -46,6 +46,17 @@ const GoalForm = (props) => {
       case 'fitness': {
         return (
           <>
+
+            <div className="col-12">
+              <input
+                name="category"
+                type="number"
+                placeholder="Enter the category of your goal"
+                value={formState.category}
+                className="form-input w-100"
+                onChange={handleChange}
+              />
+            </div>
             <div className="col-12">
               <input
                 name="currentWeight"
@@ -78,7 +89,7 @@ const GoalForm = (props) => {
             </div>
             <div className="col-12">
               <input
-                name="workoutDuration"
+                name="duration"
                 type="number"
                 placeholder="How long will it take you to reach your goal?"
                 value={formState.duration}
@@ -91,21 +102,44 @@ const GoalForm = (props) => {
       }
       case 'food': {
         return (
-
-          <div className="col-12">
-            <input
-              name="duration"
-              type="number"
-              placeholder="How many calories does your food have?"
-              value={formState.calory}
-              className="form-input w-100"
-              onChange={handleChange}
-            />
-          </div>
+          <>
+            <div className="col-12">
+              <input
+                name="category"
+                type="number"
+                placeholder="Enter the category of your goal"
+                value={formState.category}
+                className="form-input w-100"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="col-12">
+              <input
+                name="calories"
+                type="number"
+                placeholder="How many calories does your food have?"
+                value={formState.calories}
+                className="form-input w-100"
+                onChange={handleChange}
+              />
+            </div>
+          </>
         );
       }
       case 'sleep': {
         return (
+
+          <>
+          <div className="col-12">
+            <input
+              name="category"
+              type="number"
+              placeholder="Enter the category of your goal"
+              value={formState.category}
+              className="form-input w-100"
+              onChange={handleChange}
+            />
+          </div>
 
           <div className="col-12">
             <input
@@ -117,6 +151,7 @@ const GoalForm = (props) => {
               onChange={handleChange}
             />
           </div>
+          </>
         );
       }
       default:
