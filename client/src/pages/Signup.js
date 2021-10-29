@@ -96,13 +96,13 @@ const Signup = () => {
   };
 
   return (
-    <main>
+    <>
       <h4>Sign Up</h4>
       <div className="text-danger">
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>
-    </main>
+    </>
   );
 };
 

@@ -8,12 +8,11 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/index";
+
 
 // import { useState } from 'react';
 
@@ -55,16 +54,8 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
+            
             <Route exact path="/me">
-              <Profile />
-            </Route>
-            <Route exact path="/users/:id">
               <Profile />
             </Route>
             <Route exact path="/dashboard">
