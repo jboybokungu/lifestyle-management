@@ -5,12 +5,14 @@ import { ADD_GOAL } from '../../utils/mutations';
 
 const GoalForm = (props) => {
   const [formState, setFormState] = useState({
-    title: 'TestTitle',
+    title: '',
     category: "TestCategory",
     currentWeight: null,
     goalWeight: null,
     exercise: null,
-    duration: null
+    duration: null,
+    calory: null,
+    sleepDuration: null
   });
 
   // Set up our mutation with an option to handle errors
@@ -94,8 +96,8 @@ const GoalForm = (props) => {
             <input
               name="duration"
               type="number"
-              placeholder="Enter your current Weight"
-              value={formState.currentWeight}
+              placeholder="How many calories does your food have?"
+              value={formState.calory}
               className="form-input w-100"
               onChange={handleChange}
             />
@@ -109,8 +111,8 @@ const GoalForm = (props) => {
             <input
               name="sleepDuration"
               type="number"
-              placeholder="How long do you want to sleep"
-              value={formState.sleep}
+              placeholder="How long do you want to sleep?"
+              value={formState.sleepDuration}
               className="form-input w-100"
               onChange={handleChange}
             />
