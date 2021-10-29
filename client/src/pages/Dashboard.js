@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Card,
   CardGroup,
@@ -9,11 +9,26 @@ import {
   CardText,
 } from "reactstrap";
 
-import GoalForm from "../components/GoalForm";
+import GoalForm from '../components/GoalForm';
 function Dashboard() {
+  const [goal,setGoal] = useState('fitness');
+  const handleSetGoal = event => {
+    setGoal(event.target.value);
+  }
   return (
     <div>
-      <GoalForm type="fitness" />
+      <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
+        <option value="fitness">
+          Fitness
+        </option>
+        <option value="food">
+          Food
+        </option>
+        <option value="sleep">
+          Sleep
+        </option>
+      </select>
+      <GoalForm type={goal} />
       <CardGroup>
         <Card>
           <CardImg
@@ -25,7 +40,7 @@ function Dashboard() {
           <CardBody>
             <CardTitle tag="h5"></CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
-            <CardText className="text-center"></CardText>
+            <CardText className="text-center">SLEEP</CardText>
             {/* <Button>
         Button
       </Button> */}
@@ -41,7 +56,7 @@ function Dashboard() {
           <CardBody>
             <CardTitle tag="h5"></CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
-            <CardText className="text-center"></CardText>
+            <CardText className="text-center"> FITNESS</CardText>
             {/* <Button>
         Button
       </Button> */}
@@ -57,13 +72,14 @@ function Dashboard() {
           <CardBody>
             <CardTitle tag="h5"></CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
-            <CardText className="text-center"></CardText>
+            <CardText className="text-center">FOOD</CardText>
+            {/* <Button>
+        Button
+      </Button> */}
           </CardBody>
         </Card>
       </CardGroup>
-  </div>
-
-  
+    </div>
   );
 }
 

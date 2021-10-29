@@ -25,33 +25,24 @@ export const ADD_USER = gql`
 `;
 export const ADD_GOAL = gql`
   mutation addGoal(
-      $title: String,
-      $currentWeight: Float, 
-      $goalWeight: Float, 
+      $title: String!,
+      $category: String!, 
+      $currentWeight: Int,
+      $goalWeight: Int, 
       $exercise: String,
-      $duration: Int,
-      $ounces: Number,
-      $calories: Number
+      $duration: String,
     ) {
     addFitnessGoal(
       title: $title,
+      category: $category
       currentWeight: $currentWeight,
       goalWeight: $goalWeight,
       exercise: $exercise,
       duration: $duration,
-      ounces: $ounces,
-      calories: $calories
+
     ) {
-      goal {
-        _id
-        title
-        currentWeight
-        goalWeight
-        exercise
-        duration
-        calories
-        ounces
-      }
+      _id
+      title
     }
   }
 `;
