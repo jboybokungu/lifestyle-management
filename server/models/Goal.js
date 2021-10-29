@@ -26,11 +26,16 @@ const goalSchema = new Schema({
     exercise: {
         type: String,
         minlength: 10,
+        maxlength: 280,
         trim: true,
     },
     duration: {
         type: Number, // minutes
     },
+
+    sleepDuration: {
+        type: Number 
+    }
 });
 
 const Goal = model('Goal', goalSchema);

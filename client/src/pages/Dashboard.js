@@ -17,6 +17,7 @@ function Dashboard() {
   }
   return (
     <div>
+      
       <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
         <option value="fitness">
           Fitness
