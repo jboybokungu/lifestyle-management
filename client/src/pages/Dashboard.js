@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardGroup,
@@ -9,25 +9,18 @@ import {
   CardText,
 } from "reactstrap";
 
-import GoalForm from '../components/GoalForm';
+import GoalForm from "../components/GoalForm";
 function Dashboard() {
-  const [goal,setGoal] = useState('fitness');
-  const handleSetGoal = event => {
+  const [goal, setGoal] = useState("fitness");
+  const handleSetGoal = (event) => {
     setGoal(event.target.value);
-  }
+  };
   return (
     <div>
-      
       <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
-        <option value="fitness">
-          Fitness
-        </option>
-        <option value="food">
-          Food
-        </option>
-        <option value="sleep">
-          Sleep
-        </option>
+        <option value="fitness">Fitness</option>
+        <option value="food">Food</option>
+        <option value="sleep">Sleep</option>
       </select>
       <GoalForm type={goal} />
       <CardGroup>
