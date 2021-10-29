@@ -26,7 +26,7 @@ const GoalForm = (props) => {
     try {
       const { data } = addGoal({
         variables: {
-          ...formState
+          ...formState, category: props.type
         },
       });
 
@@ -38,7 +38,13 @@ const GoalForm = (props) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormState(form => ({ ...form, [name]: value }));
+    const newValue = (
+      name === "goalWeight" || 
+      name === "currentWeight" || 
+      name === "calories" ||
+      name === "duration"
+    ) ? Number(value) : value;
+    setFormState(form => ({ ...form, [name]: newValue }));
   };
 
   const buildForm = () => {
@@ -46,17 +52,6 @@ const GoalForm = (props) => {
       case 'fitness': {
         return (
           <>
-
-            <div className="col-12">
-              <input
-                name="category"
-                type="number"
-                placeholder="Enter the category of your goal"
-                value={formState.category}
-                className="form-input w-100"
-                onChange={handleChange}
-              />
-            </div>
             <div className="col-12">
               <input
                 name="currentWeight"
@@ -105,16 +100,6 @@ const GoalForm = (props) => {
           <>
             <div className="col-12">
               <input
-                name="category"
-                type="number"
-                placeholder="Enter the category of your goal"
-                value={formState.category}
-                className="form-input w-100"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col-12">
-              <input
                 name="calories"
                 type="number"
                 placeholder="How many calories does your food have?"
@@ -128,23 +113,11 @@ const GoalForm = (props) => {
       }
       case 'sleep': {
         return (
-
           <>
           <div className="col-12">
             <input
-              name="category"
-              type="number"
-              placeholder="Enter the category of your goal"
-              value={formState.category}
-              className="form-input w-100"
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="col-12">
-            <input
               name="sleepDuration"
-              type="number"
+              type="text"
               placeholder="How long do you want to sleep?"
               value={formState.sleepDuration}
               className="form-input w-100"
@@ -154,7 +127,7 @@ const GoalForm = (props) => {
           </>
         );
       }
-      default:
+      default: return null;
     }
   }
 
