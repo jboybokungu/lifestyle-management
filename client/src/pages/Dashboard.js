@@ -19,13 +19,10 @@ function Dashboard() {
 
   const [goal, setGoal] = useState("fitness");
   const handleSetGoal = (event) => {
-
     setGoal(event.target.value);
   };
   return (
-
     <div>
-
       <div className="center-goals">
         <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
           <option value="fitness">Fitness</option>
@@ -33,39 +30,6 @@ function Dashboard() {
           <option value="sleep">Sleep</option>
         </select>
         <GoalForm type={goal} />
-        <div className="col-12 col-md-8 mb-3">
-          {loading ?
-            <div>Loading...</div> :
-            <div>
-              <table className="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Current Weight</th>
-                    <th scope="col">Goal Weight</th>
-                    <th scope="col">Exercise</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Calories</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {goals.map(goal => (
-                    <tr>
-                      <td>{goal.title}</td>
-                      <td>{goal.category}</td>
-                      <td>{goal.currentWeight}</td>
-                      <td>{goal.goalWeight}</td>
-                      <td>{goal.exercise}</td>
-                      <td>{goal.duration}</td>
-                      <td>{goal.calories}</td>
-                    </tr>)
-                  )}
-                </tbody>
-              </table>
-            </div>
-          }
-        </div>
         <CardGroup>
           <Card>
             <CardImg
@@ -78,9 +42,6 @@ function Dashboard() {
               <CardTitle tag="h5"></CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
               <CardText className="text-center">SLEEP</CardText>
-              {/* <Button>
-        Button
-      </Button> */}
             </CardBody>
           </Card>
           <Card>
@@ -94,9 +55,6 @@ function Dashboard() {
               <CardTitle tag="h5"></CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
               <CardText className="text-center"> FITNESS</CardText>
-              {/* <Button>
-        Button
-      </Button> */}
             </CardBody>
           </Card>
           <Card>
@@ -110,9 +68,6 @@ function Dashboard() {
               <CardTitle tag="h5"></CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
               <CardText className="text-center">FOOD</CardText>
-              {/* <Button>
-        Button
-      </Button> */}
             </CardBody>
           </Card>
         </CardGroup>
