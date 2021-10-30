@@ -65,7 +65,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="Enter your current Weight"
                   value={formState.currentWeight}
-                  className="form-input w-80"
+                  className="form-input w-100"
                   onChange={handleChange}
                 />
               </div>
@@ -75,7 +75,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="Enter your goal weight"
                   value={formState.goalWeight}
-                  className="form-input w-80"
+                  className="form-input w-100"
                   onChange={handleChange}
                 />
               </div>
@@ -85,7 +85,7 @@ const GoalForm = (props) => {
                   type="text"
                   placeholder="Enter your exercises?"
                   value={formState.exercise}
-                  className="form-input w-80"
+                  className="form-input w-100"
                   onChange={handleChange}
                 />
               </div>
@@ -95,7 +95,7 @@ const GoalForm = (props) => {
                   type="number"
                   placeholder="How long will it take you to reach your goal?"
                   value={formState.duration}
-                  className="form-input w-80"
+                  className="form-input w-100"
                   onChange={handleChange}
                 />
               </div>
@@ -168,14 +168,16 @@ const GoalForm = (props) => {
             value={formState.title}
             className="form-input w-90"
             onChange={handleChange}
-          />
+            />
+            {buildForm()}
+            <div className="col-12 col-lg-3 justify-content-center">
+              <Button className="btn" type="submit">
+                Add Goal
+              </Button>
+            </div>
+         
         </div>
-        {buildForm()}
-        <div className="col-12 col-lg-3 justify-content-center">
-          <Button outline color="secondary" type="submit">
-            Add Goal
-          </Button>
-        </div>
+
         {error && (
           <div className="col-12 my-3 bg-danger text-dark p-3 text-center justify-content-center">
             Something went wrong...

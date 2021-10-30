@@ -1,16 +1,21 @@
 
 .footer {
   background-color: #000000;
-  position: fixed;
+  position: relative;
   width: 100%;
   bottom: 0;
-  color: #FBE6D4;
+  color: #ffffff;
   text-align: center;
   padding: 5px;
   text-decoration: none;
   font-size:10px;
 }
 
-a:link {
-  color: black;
+.text:hover{
+  color: rgb(255, 255, 255);
+}
+
+
+.text{
+  color:rgb(9, 176, 9);
 }

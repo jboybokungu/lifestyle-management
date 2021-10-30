@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
-import UserList from '../components/UserList';
+
 
 const Profile = () => {
   const { id } = useParams();
@@ -87,7 +87,7 @@ const Profile = () => {
     <div>
       <div>
         <h2>
-          Viewing {id ? `${user.username}'s` : 'your'} profile.
+        Welcome {id ? `${user.username}'s` : 'your'} !
         </h2>
         {renderCurrentUserInfo()}
         {renderUserGoals()}

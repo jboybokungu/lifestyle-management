@@ -8,34 +8,33 @@ const Footer = () => {
       <Container>
         <Nav className="d-flex justify-content-center">
           <NavItem>
-            <NavLink href="" className="text-reset">
+            <NavLink href="" className="text">
               About Us
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text-reset">
+            <NavLink href="" className="text">
               Contact
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text-reset">
+            <NavLink href="" className="text">
               Privacy
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text-reset">
+            <NavLink href="" className="text">
               Policy
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text-reset">
+            <NavLink href="" className="text">
               Terms & Conditions
             </NavLink>
           </NavItem>
         </Nav>
         <div className="copyright">
           © {new Date().getFullYear()} published by LYBL Tech
-          {/* <a href="" target="_blank"></a> */}
         </div>
       </Container>
     </footer>

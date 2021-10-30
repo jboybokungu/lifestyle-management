@@ -1,13 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const User = ({ _id, username }) => {
   return (
     <div key={_id}>
       <h4>
-        <Link to={`/me/${_id}`}>
-          {username}
-        </Link>
+        <Link to={`/me/${_id}`}>{username}</Link>
       </h4>
     </div>
   );
@@ -18,8 +16,8 @@ const UserList = ({ users, title }) => {
 
   const renderUsers = () => {
     if (!users) return null;
-    return users.map(user => <User key={user._id} {...user} />);
-  }
+    return users.map((user) => <User key={user._id} {...user} />);
+  };
 
   return (
     <>

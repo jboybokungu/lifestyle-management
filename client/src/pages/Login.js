@@ -75,7 +75,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
               </FormGroup>
-              <Button outline color="secondary" type="submit" onClick={handleFormSubmit}>
+              <Button className="btn" type="submit" onClick={handleFormSubmit}>
                 Submit
               </Button>{" "}
             </Col>
@@ -88,7 +88,7 @@ const Login = () => {
 
 return (
   <>
-    <h4>Login</h4>
+    <h4 className="login">Login</h4>
     <div>
       {renderForm()}
       {error && <div>{error.message}</div>}
