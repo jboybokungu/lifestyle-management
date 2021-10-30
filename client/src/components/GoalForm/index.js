@@ -171,7 +171,7 @@ const GoalForm = (props) => {
             />
             {buildForm()}
             <div className="col-12 col-lg-3 justify-content-center">
-              <Button className="text-light" type="submit">
+              <Button className="btn" type="submit">
                 Add Goal
               </Button>
             </div>

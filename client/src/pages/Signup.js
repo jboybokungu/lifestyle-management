@@ -4,6 +4,8 @@ import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Col, Row, Form, FormGroup, Label, Button } from "reactstrap";
+import "./signup.css";
+
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -48,7 +50,7 @@ const Signup = () => {
     }
 
     return (
-      <form className="text-center">
+      <form className="form">
         <Form>
           <Row xs="3">
             <Col md={6}>
@@ -85,7 +87,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
               </FormGroup>
-              <Button outline color="secondary" type="submit" onClick={handleFormSubmit}>
+              <Button className="btn" type="submit" onClick={handleFormSubmit}>
                 Submit
               </Button>{" "}
             </Col>
@@ -97,7 +99,7 @@ const Signup = () => {
 
   return (
     <>
-      <h4>Sign Up</h4>
+      <h4 className="signup">Sign Up</h4>
       <div className="text-danger">
         {renderForm()}
         {error && <div>{error.message}</div>}

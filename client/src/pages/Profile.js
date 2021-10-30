@@ -87,7 +87,7 @@ const Profile = () => {
     <div>
       <div>
         <h2>
-          Viewing {id ? `${user.username}'s` : 'your'} profile.
+        Welcome {id ? `${user.username}'s` : 'your'} !
         </h2>
         {renderCurrentUserInfo()}
         {renderUserGoals()}
