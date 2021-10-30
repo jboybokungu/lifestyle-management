@@ -1,9 +1,10 @@
-html, * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+html,
+* {
+  margin: auto;
+  padding: auto;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
+
 .credential-controls {
   display: flex;
   align-items: center;
@@ -16,9 +17,12 @@ html, * {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 8px;
 }
 
 #holder {
   min-height: 100vh;
+}
+
+.w-100 {
+  width: 90% !important;
 }

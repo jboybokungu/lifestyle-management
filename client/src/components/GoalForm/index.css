@@ -1,26 +1,10 @@
-.credential-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-}
-
-.credential-control > section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 8px;
-  background-color: blue;
-  
-}
 .center-goals {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   
+   background: rgba(0, 0, 0, 0);
+   color:black;
     
   }
   .center-goals input{
@@ -32,4 +16,27 @@
 }
 .center{
     justify-content: center;
+}
+h3{
+  color:rgb(4, 179, 7);
+  margin:auto;
+  padding:10px;
+  
+}
+
+.btn{
+  border:none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  background:rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
+
+}
+
+.btn:hover{
+  background:rgb(4, 179, 7);
+  border:none;
+  justify-content: center;
 }
