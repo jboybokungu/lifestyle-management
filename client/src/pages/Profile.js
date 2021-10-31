@@ -7,7 +7,6 @@ import Auth from "../utils/auth";
 import { QUERY_USER, QUERY_ME,} from "../utils/queries";
 // Components
 import { List, CardImg, Card, Row } from "reactstrap";
-import { Button } from "reactstrap";
 import "./profile.css";
 
 
@@ -98,14 +97,14 @@ const Profile = () => {
         <CardImg
           className="Cardimage"
           alt="CardImage"
-          src="https://source.unsplash.com/1600x900/?workout"
+          src="https://source.unsplash.com/1600x900/?Workout,Boxing"
         />
       </Card>
       <Card className="Card">
         <CardImg
           className="Cardimage"
           alt="CardImage"
-          src="https://source.unsplash.com/1600x900/?HealthyFood"
+          src="https://source.unsplash.com/1600x900/?Vegetables,Fruit"
         />
       </Card>
       {renderUserGoals()}

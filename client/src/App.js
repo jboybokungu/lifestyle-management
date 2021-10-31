@@ -13,10 +13,11 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/index";
 
+
 // import { useState } from 'react';
 
 import "./index.css";
-import Login from "./pages/Login";
+import About from "./pages/About";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,11 +52,14 @@ function App() {
             <Navbar />
           </Header>
           <div>
-          <Route exact path="/profile">
-              <Login />
+          <Route exact path="/about">
+              <About/>
             </Route>
-            <Route exact path="/">
+            <Route exact path="/signup">
               <Home />
+            </Route>
+            <Route exact path="/home">
+              <me/>
             </Route>
             <Route exact path="/me">
               <Profile />

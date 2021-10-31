@@ -6,7 +6,6 @@ import Auth from "../utils/auth";
 import { Col, Row, Form, FormGroup, Label, Button } from "reactstrap";
 import "./signup.css";
 
-
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: "",
@@ -38,13 +37,12 @@ const Signup = () => {
     }
   };
 
-  // -------------------------sign-up-style-----------------------//
-
   const renderForm = () => {
     if (data) {
       return (
         <p className="text-success">
-          Success! You may now head <Link to="./dashboard">back to the homepage.</Link>
+          Success! You may now head{" "}
+          <Link to="./dashboard">back to the homepage.</Link>
         </p>
       );
     }
