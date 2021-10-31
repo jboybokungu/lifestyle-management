@@ -1,11 +1,15 @@
 // Node Modules
-import React from 'react';
-import { Redirect, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import React from "react";
+import { Redirect, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 // Utilities
-import Auth from '../utils/auth';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from "../utils/auth";
+import { QUERY_USER, QUERY_ME,} from "../utils/queries";
 // Components
+import { List, CardImg, Card, Row } from "reactstrap";
+import { Button } from "reactstrap";
+import "./profile.css";
+
 
 
 const Profile = () => {
@@ -44,7 +48,7 @@ const Profile = () => {
     const goals = user?.goals?.length ? user.goals : [];
     console.log(user);
     return (
-      <table className="table table-dark">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Title</th>
@@ -57,43 +61,59 @@ const Profile = () => {
           </tr>
         </thead>
         <tbody>
-        {goals.map(goal => (
-          <tr>
-            <td>{goal.title}</td>
-            <td>{goal.category}</td>
-            <td>{goal.currentWeight}</td>
-            <td>{goal.goalWeight}</td>
-            <td>{goal.exercise}</td>
-            <td>{goal.duration}</td>
-            <td>{goal.calories}</td>
-          </tr>)
-        )}
+          {goals.map((goal) => (
+            <tr>
+              <td>{goal.title}</td>
+              <td>{goal.category}</td>
+              <td>{goal.currentWeight}</td>
+              <td>{goal.goalWeight}</td>
+              <td>{goal.exercise}</td>
+              <td>{goal.duration}</td>
+              <td>{goal.calories}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-    )
+    );
   };
+
+
 
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
+      <List className="list">
+        <li> {user.username}</li>
+        <li> {user.email}</li>
+      </List>
     );
-  }
+  };
 
   return (
-    <div>
-      <div>
-        <h2>
-        Welcome {id ? `${user.username}'s` : 'your'} !
-        </h2>
-        {renderCurrentUserInfo()}
-        {renderUserGoals()}
-      </div>
+    <div className="Render">
+      <Row>
+       
+     {renderCurrentUserInfo()}
+     <Card className="Card">
+        <CardImg
+          className="Cardimage"
+          alt="CardImage"
+          src="https://source.unsplash.com/1600x900/?workout"
+        />
+      </Card>
+      <Card className="Card">
+        <CardImg
+          className="Cardimage"
+          alt="CardImage"
+          src="https://source.unsplash.com/1600x900/?HealthyFood"
+        />
+      </Card>
+      {renderUserGoals()}
+      </Row>
     </div>
+    
   );
+  
 };
 
 export default Profile;

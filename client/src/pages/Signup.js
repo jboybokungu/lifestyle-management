@@ -44,7 +44,7 @@ const Signup = () => {
     if (data) {
       return (
         <p className="text-success">
-          Success! You may now head <Link to="/">back to the homepage.</Link>
+          Success! You may now head <Link to="./dashboard">back to the homepage.</Link>
         </p>
       );
     }

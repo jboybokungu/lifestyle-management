@@ -14,8 +14,8 @@ const Navbar = () => {
       return (
         <>
           <li className="nav-item">
-            <Link className="nav-link" to="/me/users/:id">
-              Profile <span className="navbar-toggler-icon"></span>
+            <Link className="nav-link" to="/me">
+              Profile <span className=""></span>
             </Link>
           </li>
           <li>
@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand text" to="/">
+        <Link className="navbar-brand text" to="/me">
           L.Y.B.L
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
