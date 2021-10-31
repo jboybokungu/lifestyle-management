@@ -17,6 +17,7 @@ import Navbar from "./components/Navbar/index";
 // import { useState } from 'react';
 
 import "./index.css";
+import About from "./pages/About";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,10 +52,15 @@ function App() {
             <Navbar />
           </Header>
           <div>
-            <Route exact path="/">
+          <Route exact path="/about">
+              <About/>
+            </Route>
+            <Route exact path="/signup">
               <Home />
             </Route>
-            
+            <Route exact path="/home">
+              <me/>
+            </Route>
             <Route exact path="/me">
               <Profile />
             </Route>

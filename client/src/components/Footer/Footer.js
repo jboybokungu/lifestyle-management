@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.css";
-import { Container, Nav, NavItem, NavLink } from "reactstrap";
+import { Container, Nav, NavItem } from "reactstrap";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -8,29 +10,29 @@ const Footer = () => {
       <Container>
         <Nav className="d-flex justify-content-center">
           <NavItem>
-            <NavLink href="" className="text">
+            <Link to="/About">
               About Us
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text">
+            <Link href="" className="textt">
               Contact
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text">
+            <Link  href="" className="textt">
               Privacy
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text">
+            < Link href="" className="textt">
               Policy
-            </NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="" className="text">
+            <Link  href="" className="textt">
               Terms & Conditions
-            </NavLink>
+            </Link>
           </NavItem>
         </Nav>
         <div className="copyright">
