@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 import { Col, Row, Form, FormGroup, Label, Button } from "reactstrap";
 
 const Login = () => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -34,8 +34,8 @@ const Login = () => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
@@ -43,17 +43,16 @@ const Login = () => {
     if (data) {
       return (
         <p>
-          Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
+          Success! You may now head <Link to="/">back to the homepage.</Link>
         </p>
-      )
+      );
     }
     return (
       <form className="text-center">
         <Form>
           <Row xs="3">
             <Col md={6}>
-              <FormGroup>
+              <FormGroup className="Form">
                 <Label for="Email"></Label>
                 <input
                   className="email text-success text-center"
@@ -64,7 +63,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
               </FormGroup>
-              <FormGroup>
+              <FormGroup className="Form">
                 <Label for="Password"></Label>
                 <input
                   className="password text-center"
@@ -81,20 +80,19 @@ const Login = () => {
             </Col>
           </Row>
         </Form>
-      </form >
+      </form>
     );
   };
 
-
-return (
-  <>
-    <h4 className="login">Login</h4>
-    <div>
-      {renderForm()}
-      {error && <div>{error.message}</div>}
-    </div>
-  </>
-);
+  return (
+    <>
+      <h4 className="login">Login</h4>
+      <div>
+        {renderForm()}
+        {error && <div>{error.message}</div>}
+      </div>
+    </>
+  );
 };
 
 export default Login;

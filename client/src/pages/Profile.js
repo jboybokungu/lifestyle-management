@@ -4,12 +4,10 @@ import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 // Utilities
 import Auth from "../utils/auth";
-import { QUERY_USER, QUERY_ME,} from "../utils/queries";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 // Components
 import { List, CardImg, Card, Row } from "reactstrap";
 import "./profile.css";
-
-
 
 const Profile = () => {
   const { id } = useParams();
@@ -76,8 +74,6 @@ const Profile = () => {
     );
   };
 
-
-
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
@@ -91,28 +87,25 @@ const Profile = () => {
   return (
     <div className="Render">
       <Row>
-       
-     {renderCurrentUserInfo()}
-     <Card className="Card">
-        <CardImg
-          className="Cardimage"
-          alt="CardImage"
-          src="https://source.unsplash.com/1600x900/?Workout,Boxing"
-        />
-      </Card>
-      <Card className="Card">
-        <CardImg
-          className="Cardimage"
-          alt="CardImage"
-          src="https://source.unsplash.com/1600x900/?Vegetables,Fruit"
-        />
-      </Card>
-      {renderUserGoals()}
+        {renderCurrentUserInfo()}
+        <Card className="Card">
+          <CardImg
+            className="Cardimage"
+            alt="CardImage"
+            src="https://source.unsplash.com/1600x900/?Workout,Boxing"
+          />
+        </Card>
+        <Card className="Card">
+          <CardImg
+            className="Cardimage"
+            alt="CardImage"
+            src="https://source.unsplash.com/1600x900/?Vegetables,Fruit"
+          />
+        </Card>
+        {renderUserGoals()}
       </Row>
     </div>
-    
   );
-  
 };
 
 export default Profile;

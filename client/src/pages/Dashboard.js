@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_GET_GOAL } from "../utils/queries"
-
-
+import { QUERY_GET_GOAL } from "../utils/queries";
+import Auth from "../utils/auth";
 import GoalForm from "../components/GoalForm";
+import {Redirect} from "react-router-dom";
 function Dashboard() {
   const { loading, data } = useQuery(QUERY_GET_GOAL);
   const goals = data?.getGoal || [];
@@ -11,11 +11,12 @@ function Dashboard() {
 
   const [goal, setGoal] = useState("fitness");
   const handleSetGoal = (event) => {
-
     setGoal(event.target.value);
   };
+  if(!Auth.loggedIn()){
+    return <Redirect to="/signup" />
+  }
   return (
-
     <div>
       <div className="center-goals">
         <select name="chooseGoal" onChange={handleSetGoal} defaultValue={goal}>
@@ -25,10 +26,11 @@ function Dashboard() {
         </select>
         <GoalForm type={goal} />
         <div className="col-12 col-md-8 mb-3">
-          {loading ?
-            <div>Loading...</div> :
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
             <div>
-              <table className="table table-dark text-center">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Title</th>
@@ -41,7 +43,7 @@ function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {goals.map(goal => (
+                  {goals.map((goal) => (
                     <tr>
                       <td>{goal.title}</td>
                       <td>{goal.category}</td>
@@ -50,14 +52,13 @@ function Dashboard() {
                       <td>{goal.exercise}</td>
                       <td>{goal.duration}</td>
                       <td>{goal.calories}</td>
-                    </tr>)
-                  )}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
-          }
+          )}
         </div>
-
       </div>
     </div>
   );

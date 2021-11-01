@@ -1,21 +1,24 @@
-.linkd{
-    text-align: center;
-    color:black;
-    text-decoration: none;
-    list-style: none;
-    font-size: 30px;
-    margin:auto;
-    padding:40px;
+.linkd {
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  font-size: 30px;
+  padding: 40px;
+  background: black;
 }
 
-text:visited{
-    color:green;
+text:visited {
+  color: green;
 }
 
-.text:hover{
-    color: rgb(0, 0, 0);
+.text:hover {
+  color: rgb(255, 255, 255);
 }
 
-h1{
-    color:rgb(0, 76, 255);
+h2 {
+  color: rgb(255, 249, 249);
+  background: black;
+  font-size: 70px;
+  padding: 30px;
 }

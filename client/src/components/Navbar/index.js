@@ -35,15 +35,12 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand text" to="/dashboard">
+        <Link className="navbar-brand text" to="/signup">
           L.Y.B.L
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto">{renderConditional()}</ul>
         </div>
-        <Link className="navbar-brand text" to="/Signup">
-         Return
-        </Link>
       </nav>
     </>
   );
