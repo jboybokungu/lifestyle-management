@@ -46,7 +46,7 @@ select {
 }
 
 select:hover {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 input.form-input.w-100 {
