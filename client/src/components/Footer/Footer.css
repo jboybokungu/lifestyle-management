@@ -1,4 +1,3 @@
-
 .footer {
   background-color: #000000;
   position: relative;
@@ -6,16 +5,16 @@
   bottom: 0;
   color: #ffffff;
   text-align: center;
-  padding: 5px;
+  padding: 30px;
   text-decoration: none;
-  font-size:10px;
+  font-size: 10px;
 }
 
-.textt:hover{
+.textt:hover {
   color: rgb(255, 255, 255);
 }
 
-.textt{
-  color:rgb(9, 176, 9);
-  margin:10px;
+.textt {
+  color: rgb(9, 176, 9);
+  margin: 10px;
 }

@@ -10,29 +10,29 @@ h2,
 }
 
 .Cardimage {
-  margin:5px;
-  padding:inherit;
+  margin: 5px;
+  padding: inherit;
   background-position: center;
   height: auto;
   width: auto;
-  border:none;
+  border: none;
   background-color: rgb(255, 255, 255);
 }
 
-.Card{
-    background-color: rgb(255, 255, 255);
-    border:none;
-   width: 50%;
+.Card {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 50%;
 }
 
-.Render{
-color:rgb(0, 0, 0);
-text-align: center;
-background-color: rgb(255, 255, 255);
+.Render {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-color: rgb(255, 255, 255);
 }
 
-.table{
-    margin:10px;
-    color:rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+.table {
+  margin: 10px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }

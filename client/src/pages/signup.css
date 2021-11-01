@@ -1,21 +1,19 @@
-
 .btn {
   background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  margin:auto;
-  padding:auto;
+  margin: auto;
+  padding: auto;
 }
 .btn:hover {
   background: rgb(4, 179, 7);
   border: none;
 }
 
-
-.signup{
-  margin-top:20px;
+.signup {
+  margin-top: 20px;
 }
 
-.form{
-  margin:auto;
-  padding:auto;
+.form {
+  margin: auto;
+  padding: auto;
 }

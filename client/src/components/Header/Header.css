@@ -1,28 +1,29 @@
-h1{
+h1 {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-size: 70px;
   text-align: center;
   text-decoration: none;
-  margin-bottom:20px;
- 
+  margin-bottom: 20px;
 }
 
-.text-center{
-  color:white;
+h1.display-1.text-center {
+  color: rgb(22, 163, 3);
+}
+
+a {
+  color: rgb(12, 178, 0);
 }
 
 a:link {
   text-decoration: none;
 }
 
-
 .justify-content-center:hover {
   color: #22a611;
 }
 
-.headerr{
-background-image:url("https://images.unsplash.com/photo-1497211419994-14ae40a3c7a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80");
-padding-bottom:40px;
-padding-top:50px;
-margin-bottom:60px;
+.headerr {
+  padding-bottom: 40px;
+  padding-top: 50px;
+  /* margin-bottom:60px; */
 }

@@ -57,6 +57,7 @@ const GoalForm = (props) => {
     switch (props.type) {
       case "fitness": {
         return (
+          
           <div className="center">
             <>
               <div className="col-12">
@@ -101,6 +102,7 @@ const GoalForm = (props) => {
               </div>
             </>
           </div>
+          
         );
       }
       case "food": {
@@ -122,7 +124,7 @@ const GoalForm = (props) => {
       case "sleep": {
         return (
           <>
-            <div className="col-12 justify-content-center">
+            <div className="col-12">
               <input
                 name="sleepDuration"
                 type="number"
@@ -158,7 +160,6 @@ const GoalForm = (props) => {
 
   return (
     <div className="col-12 col-lg-3 text-center">
-      <h3>Hello Boss! What are we accomplishing today?</h3>
       <form onSubmit={handleFormSubmit}>
         <div className="col-12 justify-content-center">
           <input

@@ -13,7 +13,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/index";
 
-
 // import { useState } from 'react';
 
 import "./index.css";
@@ -52,14 +51,14 @@ function App() {
             <Navbar />
           </Header>
           <div>
-          <Route exact path="/about">
-              <About/>
+            <Route exact path="/about">
+              <About />
             </Route>
             <Route exact path="/signup">
               <Home />
             </Route>
             <Route exact path="/home">
-              <me/>
+              <me />
             </Route>
             <Route exact path="/me">
               <Profile />
