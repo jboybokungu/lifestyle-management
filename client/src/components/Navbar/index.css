@@ -1,4 +1,5 @@
-a.navbar-brand.text {
-  padding-left: 10px;
+.textLYBL {
+  padding-left: 40px;
   color: rgb(2, 173, 5);
+  font-size:40px;
 }
