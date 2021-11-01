@@ -80,12 +80,15 @@ For the User in need of a “one-stop” wellness goal setting and tracker appli
 The LBYL(Living Your Best Lifestyle) application is for anyone who would like to organize wellness goals. This is for the user that wants to  organize for a better overall wellness lifestyle. The user will  improve their fitness, sleep, and food goals as well.
 
 ## Creators
-Checkout my GitHub [profile](https://github.com/mvint2647)
-Checkout my GitHub [profile](https://github.com/Lajaynees)
-Checkout my GitHub [profile](https://github.com/as98250)
-Checkout my GitHub [profile](https://github.com/jboybokungu)
+Checkout my GitHub [Mel](https://github.com/mvint2647)<br>
+Checkout my GitHub [LJ](https://github.com/Lajaynees)<br>
+Checkout my GitHub [Ariell](https://github.com/as98250)<br>
+Checkout my GitHub [Jonathan](https://github.com/jboybokungu)
 
 ## Screenshots/Vids
+Video [https://watch.screencastify.com/v/J0vcvgHFfNZudHCKMYv8]
+
+
 ![lifestyle-managment](part1.gif)
 
 ![lifestyle-managment](part2.gif)
